@@ -1,0 +1,44 @@
+body{
+	background-color: #ddd;
+}
+
+.wrapper{
+	
+	min-height:100%;
+	margin-bottom:-150px;
+}
+
+#header{
+	border: 1px solid #000;
+}
+
+#logo{
+
+}
+
+.main{
+	width:100%;
+	position:relative;
+}
+
+#sidebar{
+	border: 1px solid #000;
+	width:250px;
+	height:auto;
+	position:absolute;
+}
+
+#content{
+	position:relative;
+	margin-left:251px;
+	width:auto;
+	height:auto;
+	padding: 20px;
+	border:1px solid #000;
+}
+
+#footer{
+	position:relative;
+	border:1px solid #000;
+	height:150px;
+}
