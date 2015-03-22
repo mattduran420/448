@@ -9,6 +9,7 @@ body{
 }
 
 #header{
+	background-color:#333;
 	border: 1px solid #000;
 	border-top:0px;
 	padding:20px;
@@ -18,8 +19,13 @@ body{
 	text-transform: uppercase;
 }
 
+#header-nav a{
+	color:#fff;
+}
+
 #header-nav li{
 	display: inline;
+	background-color: #555;
 	padding:5px 5px 5px 5px;
 	margin-left:15px;
 	border: 1px solid #000;
@@ -34,7 +40,8 @@ body{
 }
 
 .main{
-	width:100%;
+	width:inherit;
+	margin:25px 2% 0 2%;
 	position:relative;
 	height: inherit;
 }
@@ -47,21 +54,26 @@ body{
 }
 
 #content{
-	/* if sidebar */
-	/* margin-left:251px; */
 	position:relative;
 	width:auto;
-
+	background-color: #FDF9C9;
 	height:auto;
 	padding: 20px;
 	border:1px solid #000;
 }
 
 #footer{
+	background-color:#333;
+	color: #fff;
 	position:absolute;
 	border-top:1px solid #000;
 	width:100%;
 	height:150px;
 	bottom:0;
 	left:0;
+}
+
+.inner-footer{
+	position:relative;
+	padding: 20px 50px 0 50px;
 }
