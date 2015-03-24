@@ -1,0 +1,87 @@
+@@ -1,6 +1,6 @@
+<html>
+	<head>
+		<title>Musician's Ink | Use Case 3</title>
+		<title>Use Case 2 | Musician's Ink</title>
+		<!-- BEGIN ASSET INCLUDES -->
+		<link rel="stylesheet" type="text/css" href="assets/styles/base.css">
+		<script type="text/javascript" src="assets/js/jquery.js"></script>
+@@ -30,7 +30,57 @@
+		<div class="main">
+			<div id="content">
+				<!-- EDIT HERE -->
+				<p>MAIN</p>
+				<div align="center">
+					<h3>Use Case 2</h3>
+					<h2>Drafts</h2>
+					<div id="comic-playground">
+						<!-- BEGIN SAMPLE COMIC NOTES -->
+						<!-- COMIC NOTES WILL BE INSERTED DYNAMICALLY -->
+						<div id="note-container">
+							<div class="comic-note" style="margin-top:88px;margin-left:55px;">
+								<a class="note-link" href="javascript:void(0)" onclick="toggleNote('note-1');">X</a>
+								<div class="note-body" id="note-1">
+									<p>Note added by <a href="#">Jake</a><br/>
+									1:58 AM 3/17/2015
+									</p>
+									<p>I have no friends!</p>
+								</div>
+							</div>
+							<div class="comic-note" style="margin-top:5px;margin-left:5px;">
+								<a class="note-link" href="javascript:void(0)" onclick="toggleNote('note-2');">X</a>
+								<div class="note-body" id="note-2">
+									<p>Note added by <a href="#">Jake</a><br/>
+									1:58 AM 3/17/2015
+									</p>
+									<p>I can't wait to go to my next concert</p>
+								</div>
+							</div>
+							<div class="comic-note" style="margin-top:185px;margin-left:650px;">
+								<a class="note-link" href="javascript:void(0)" onclick="toggleNote('note-3');">X</a>
+								<div class="note-body" id="note-3">
+									<p>Note added by <a href="#">Kat</a><br/>
+									1:58 AM 3/17/2015
+									</p>
+									<p>You should draw a better here</p>
+								</div>
+							</div>
+							<div class="comic-note" style="margin-top:105px;margin-left:300px;">
+								<a class="note-link" href="javascript:void(0)" onclick="toggleNote('note-4');">X</a>
+								<div class="note-body" id="note-4">
+									<p>Note added by <a href="#">Dan</a><br/>
+									1:58 AM 3/17/2015
+									</p>
+									<p>Revise this sentence.</p>
+								</div>
+							</div>
+						</div>
+						<!-- END SAMPLE COMIC NOTES -->
+
+
+						<img id="comic" src="assets/img/sample_comic.png" class="comic-spotlight">
+					</div>
+
+				</div>
+				<!-- END EDIT HERE -->
+			</div>
+		</div>
+@@ -43,4 +93,19 @@
+		</div>
+		<!-- END FOOTER -->
+	</body>
+	<script>
+		$(document).ready(function() {
+			$('img').click(function(e) {
+				var offset = $(this).offset();
+				var randID = Math.floor((Math.random() * 1000) + 1);
+				var container = "<div class=\"comic-note\" style=\"margin-top:" + (e.clientY - offset.top) + "px;margin-left:" + (e.clientX - offset.left) + "px;\"><a class=\"note-link\" href=\"javascript:void(0)\" onclick=\"toggleNote('note-" + randID + "');\">X</a><div class=\"note-body\" id=\"note-" + randID + "\"><p>Leave a Note</p><textarea rows=\"4\" cols=\"50\"></textarea><p><input type=\"submit\" value=\"add\"></p></div></div>";
+				$('#note-container').append(container);
+				$('#note-'+randID).toggle();
+			});
+		});
+
+		function toggleNote(noteBodyID){
+			$("#" + noteBodyID).toggle();
+		}
+	</script>
+</html>
