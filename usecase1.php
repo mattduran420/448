@@ -2,27 +2,37 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns = "http://www.w3.org/1999/xhtml">
 
-<!-- HEADER -->
-  <head>
-    <title> Create Account 
-    </title>
-    <link rel="stylesheet" type="text/css" href="assets/styles/base.css" />
+<head>
+<title> Account Creation </title>
+    
+<!-- BEGIN ASSET INCLUDES -->
+  <link rel="stylesheet" type="text/css" href="assets/styles/base.css">
+  <script type="text/javascript" src="assets/js/jquery.js"></script>
+<!-- END ASSET INCLUDES -->
   </head>
+  <body>
+  
+<!-- HEADER -->
+	<div id="header">
+		<div id="header-nav" class="pull-right">
+			<ul>
+				<li><a href="usecase1.html">Use Case 1</a></li>
+				<li><a href="usecase2.html">Use Case 2</a></li>
+				<li><a href="usecase3.html">Use Case 3</a></li>
+				<li><a href="usecase4.html">Use Case 4</a></li>
+			</ul>
+		</div>
+		<div id="logo">
+		<a href="#">
+			<img src="assets/img/logo.png" height="150px" alt="Musicians Ink logo">
+		</a>
+		</div>
+
+	</div>
 <!-- END HEADER -->
 
-<!-- SIDEBAR -->
-	<body>
-		<div>
-		</div>
-
-		<div>
-		</div>
-<!-- END SIDEBAR -->
-		
-<!-- FOOTER -->
-		<div>
-		</div>
-<!-- END FOOTER -->
+<div class="main">
+<div id="content">
 
 <h1> Account Creation </h1>
 <?php 
@@ -47,7 +57,30 @@
 	$sql_insert = "INSERT INTO user (name, email, username, password) VALUES ('$name', '$email', '$username', '$password')";
 	mysql_query($sql_insert);	
 ?>
+<!-- FOOTER -->
+	<div id="footer">
+		<div class="inner-footer">
+			<p>FOOTER</p>
+		</div>
+	</div>
+	
+<!-- END FOOTER -->
+	</body>
+	<script>
+		$(document).ready(function() {
+			$('img').click(function(e) {
+				var offset = $(this).offset();
+				var randID = Math.floor((Math.random() * 1000) + 1);
+				var container = "<div class=\"comic-note\" style=\"margin-top:" + (e.clientY - offset.top) + "px;margin-left:" + (e.clientX - offset.left) + "px;\"><a class=\"note-link\" href=\"javascript:void(0)\" onclick=\"toggleNote('note-" + randID + "');\">X</a><div class=\"note-body\" id=\"note-" + randID + "\"><p>Leave a Note</p><textarea rows=\"4\" cols=\"50\"></textarea><p><input type=\"submit\" value=\"add\"></p></div></div>";
+				$('#note-container').append(container);
+				$('#note-'+randID).toggle();
+			});
+		});
 
+		function toggleNote(noteBodyID){
+			$("#" + noteBodyID).toggle();
+		}
+	</script>
 
 </body>
 </html>
