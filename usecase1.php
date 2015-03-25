@@ -66,21 +66,6 @@
 	
 <!-- END FOOTER -->
 	</body>
-	<script>
-		$(document).ready(function() {
-			$('img').click(function(e) {
-				var offset = $(this).offset();
-				var randID = Math.floor((Math.random() * 1000) + 1);
-				var container = "<div class=\"comic-note\" style=\"margin-top:" + (e.clientY - offset.top) + "px;margin-left:" + (e.clientX - offset.left) + "px;\"><a class=\"note-link\" href=\"javascript:void(0)\" onclick=\"toggleNote('note-" + randID + "');\">X</a><div class=\"note-body\" id=\"note-" + randID + "\"><p>Leave a Note</p><textarea rows=\"4\" cols=\"50\"></textarea><p><input type=\"submit\" value=\"add\"></p></div></div>";
-				$('#note-container').append(container);
-				$('#note-'+randID).toggle();
-			});
-		});
-
-		function toggleNote(noteBodyID){
-			$("#" + noteBodyID).toggle();
-		}
-	</script>
 
 </body>
 </html>
