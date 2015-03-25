@@ -3,7 +3,7 @@
 <html xmlns = "http://www.w3.org/1999/xhtml">
 
   <head>
-    <title> Create Account </title>
+    <title> Search Comics </title>
     
 <!-- BEGIN ASSET INCLUDES -->
   <link rel="stylesheet" type="text/css" href="assets/styles/base.css">
@@ -33,9 +33,9 @@
 
 <div class="main">
 <div id="content">
-<h1> Create Your Account </h1>
+<h1> Search Comics </h1>
     <p>
-	<form name ="signup" action = "success.html" method="post" >
+	<form name ="searchform" action = "success.html" method="POST" >
 	
 	<label>
 	  	Enter search keywords: <input type = "text" name = "search" size = "30" maxlength="30" />
@@ -43,6 +43,7 @@
 	<br />
 	<br />
 	
+	<!-- Select box for genres/tags -->
 	<label>
 	  	Search by genre/tags: <select name="tags">
 		  	<option>Funny</option>
@@ -63,6 +64,7 @@
 	<br />
 	<br />
 	
+	<!-- Select box for month -->
 	<label>
 	  	Date: Month <select name="month">
 	  		<option>January</option>
@@ -80,6 +82,7 @@
 		</select>
 	</label>
 	
+	<!-- Select box for day -->
 	<label>
 	  	Day <select name="day">
 	  		<option>1</option>
@@ -91,6 +94,7 @@
 		</select>
 	</label>
 
+	<!-- Select box for year -->
 	<label>
 		Year <select name="year">
 			<option>1989</option>
@@ -111,10 +115,6 @@
 	</form>
 	</p>
 
-	<br />
-	<br />
-	<br />
-	<br />
 	<br />
 	<br />
 	<br />
