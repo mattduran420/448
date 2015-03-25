@@ -78,6 +78,60 @@ body{
 	padding: 20px 50px 0 50px;
 }
 
+.left-column{
+	position: relative;
+	float:left;
+	display: block;
+	width:30%;
+	border:1px solid #000;
+}
+
+.right-column{
+	position: relative;
+	display:block;
+	width:69%;
+	margin-left:31%;
+	border:1px solid #000;
+}
+
+#profile-image{
+	border:1px solid #000;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	background-color:#fff;
+}
+
+.container {
+	padding:20px;
+}
+
+#side-navigation ul{
+	padding: 0px;
+	list-style-type: none;
+}
+
+#side-navigation li{
+	border:1px solid #000;
+	background-color: #555;
+	margin:0px;
+	padding:10px;
+}
+
+#side-navigation a{
+	color:#fff;
+}
+
+.grey{
+	background-color:#777;
+}
+
+.feed-item{
+	border:1px solid #000;
+	margin:10px;
+	background-color:#fff;
+	padding:10px;
+}
 
 /* BEGIN USE CASE 2 RELATED CSS */
 .comic-spotlight{
