@@ -31,12 +31,11 @@ CREATE TABLE db_comment(
     foreign key(user_id) references db_user(user_id),
     foreign key(comic_id) references db_comic(comic_id),
     body VARCHAR(1000), 
-    timestamp TIMESTAMP;
+    timestamp TIMESTAMP);
 
 CREATE TABLE db_tag(
     tag_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, 
     tag_name VARCHAR(40));  
-
 
 CREATE TABLE db_comictag(
     comictag_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, 
@@ -45,7 +44,7 @@ CREATE TABLE db_comictag(
 
 CREATE TABLE db_note(
     note_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, 
-    noteContent varchar(100)
+    noteContent varchar(100),
     note_time DATE,
     xposition integer,
     yposition integer,
