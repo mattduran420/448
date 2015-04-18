@@ -4,9 +4,11 @@
 		<!-- BEGIN ASSET INCLUDES -->
 		<link rel="stylesheet" type="text/css" href="assets/styles/base.css">
 		<script type="text/javascript" src="assets/js/jquery.js"></script>
+		<script type="text/javascript" src="assets/js/usecase3version2.js"></script>
+		
 		<!-- END ASSET INCLUDES -->
 	</head>
-	<body>
+		<body>
 	
 		<!-- HEADER -->
 		<div id="header">
@@ -20,9 +22,8 @@
 			</div>
 			<div id="logo">
 				<a href="index.html">
-					<img src="assets/img/logo.png" height="100px" alt="Musicians Ink logo">
+					<img src="assets/img/logo.png" height="150px" alt="Musicians Ink logo">
 				</a>
-				
 			</div>
 
 		</div>
@@ -30,39 +31,134 @@
 
 		<div class="main">
 			<div id="content">
-			  <h3>Dan's Comic</h3>
-			  <a href="#">
-				<img src="assets/img/sample_comic.png" height="150px" alt="Musicians Ink logo">
-			  </a>
-			  <br /><br />
-			  <form name = "comment_comic" action = "success.html">
-				Comment : <textarea row = "5" column = "90"></textarea><br /><br />
-		  	  <label>
-		  		Rating:  <select name="rating">
-		  			<option>1</option>
-		  			<option>2</option>
-		  			<option>3</option>
-		  			<option>4</option>
-		  			<option>5</option>
-		  			
-		  		</select>
-		  	  </label>
-  			  <br /><br />
-				<input type = "reset" value = "Reset">
-				<input type = "submit" value = "Post"><br /><br /><br />
-  			  <a href="#">
-  				<img src="assets/img/profilepic.png" height="30px" alt="Musicians Ink logo">
-  			  </a>
-				<textarea row = "5" column = "90">This comic is great!!</textarea><br /><br />
-  			  <a href="#">
-  				<img src="assets/img/profilepic.png" height="30px" alt="Musicians Ink logo">
-  			  </a>
-				<textarea row = "5" column = "90">No it it not!</textarea><br /><br />
-  			  <a href="#">
-  				<img src="assets/img/profilepic.png" height="30px" alt="Musicians Ink logo">
-  			  </a>
-				<textarea row = "5" column = "90">Yes it is so!</textarea><br /><br />						
-			  </form>
+				<!-- BEGIN SIDEBAR -->
+				<div class="left-column">
+					<div class="container grey">
+						<div align="center">
+							<img id="profile-image" src="assets/img/user.png" width="150px">
+						</div>
+						<div align="center">
+							<h4>Jake</h4>
+							<b>Maryland, USA</b><br/>
+						</div>
+						<div id="side-navigation">
+							<ul>
+								<li><a href="#">User Profile</a></li>
+								<li><a href="#">Account Settings</a></li>
+								<li><a href="#">Inbox</a></li>
+								<li><a href="#">Feed</a></li>
+								<li><a href="#">Placeholder link 1</a></li>
+								<li><a href="#">placeholder link 2</a></li>
+								<li><a href="#">Logout</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- END SIDEBAR -->
+
+				
+				
+				<div class="right-column">
+					<div id = "comic_display">
+						<div id ="comic_block">
+							<img id="comic_image" src="assets/img/sample_comic.png" width="150px">
+							
+			  				<form name = "comment_comic" action = "usecase3.php">
+			  				<input type = "button" id = "button" value="Comment" />
+			  				
+		  	  				<div id = "starRating">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('1')">
+								<input type = "hidden" name "choice" id = "1" value = "1">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('2')">
+								<input type = "hidden" name "choice" id = "2" value = "2">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('3')">
+								<input type = "hidden" name "choice" id = "3" value = "3">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('4')">
+								<input type = "hidden" name "choice" id = "4" value = "4">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('5')">
+								<input type = "hidden" name "choice" id = "5" value = "5">
+							</div>
+  			  		<br /><br />
+  			 			  						
+			  			</form>
+		   			
+						</div>
+					<!-- EDIT HERE -->
+					</div>
+					<div id = "comic_display">
+						<div id ="comic_block">
+							<img id="comic_image" src="assets/img/sample_comic.png" width="150px">
+							
+			  				<form name = "comment_comic" action = "usecase3.php">
+			  				<input type = "button" id = "button" value="Comment" />
+			  				
+		  	  				<div id = "starRating">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('1')">
+								<input type = "hidden" name "choice" id = "1" value = "1">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('2')">
+								<input type = "hidden" name "choice" id = "2" value = "2">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('3')">
+								<input type = "hidden" name "choice" id = "3" value = "3">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('4')">
+								<input type = "hidden" name "choice" id = "4" value = "4">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('5')">
+								<input type = "hidden" name "choice" id = "5" value = "5">
+							</div>
+							<div id = "comment_area">
+								<textarea></textarea>
+							</div>
+  			  		<br /><br />
+  			 			  						
+			  			</form>
+		   			
+						</div>
+					<!-- EDIT HERE -->
+					</div>
+					<div id = "comic_display">
+						<div id ="comic_block">
+							<img id="comic_image" src="assets/img/sample_comic.png" width="150px">
+							
+			  				<form name = "comment_comic" action = "usecase3.php">
+			  				<input type = "button" id = "button" value="Comment" />
+			  				
+		  	  				<div id = "starRating">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('1')">
+								<input type = "hidden" name "choice" id = "1" value = "1">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('2')">
+								<input type = "hidden" name "choice" id = "2" value = "2">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('3')">
+								<input type = "hidden" name "choice" id = "3" value = "3">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('4')">
+								<input type = "hidden" name "choice" id = "4" value = "4">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('5')">
+								<input type = "hidden" name "choice" id = "5" value = "5">
+							</div>
+  			  		<br /><br />
+  			 			  						
+			  			</form>
+		   			
+						</div>
+					<!-- EDIT HERE -->
+					</div>
+					<!-- END EDIT HERE -->
+				</div>
+				<div style="clear: both;"></div>
+					
+						
+					</div>
+			</div>
+			<br/><br/><br/><br/>
+		</div>
+
+		<!-- FOOTER -->
+		<div id="footer">
+			<div class="inner-footer">
+				<p>FOOTER</p>
+			</div>
+		</div>
+		<!-- END FOOTER -->
+	</body>
+</html>
 			</div>
 			<br/><br/><br/><br/><br/><br/><br/>
 		</div>
