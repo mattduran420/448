@@ -6,9 +6,9 @@
 	<head>
 		<title>Home | Musician's Ink</title>
 		<!-- BEGIN ASSET INCLUDES -->
-		<link rel="stylesheet" type="text/css" href="assets/styles/base.css">
-		<script type="text/javascript" src="assets/js/jquery.js"></script>
-		<script type="text/javascript" src="assets/js/upload_comic.js"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/styles/base.css">
+		<script type="text/javascript" src="/assets/js/jquery.js"></script>
+		<script type="text/javascript" src="/assets/js/upload_comic.js"></script>
 		<!-- END ASSET INCLUDES -->
 	</head>
 	<body>
