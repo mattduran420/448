@@ -1,6 +1,6 @@
 <?php
 //check if user is logged in
-if($_SESSION['is_aunthenticated']){
+if(!$_SESSION['is_authenticated']){
 	header('Location: /login.php');
 }
 
