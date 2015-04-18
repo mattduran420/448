@@ -7,11 +7,11 @@ DROP TABLE IF EXISTS db_tag;
 DROP TABLE IF EXISTS db_comictag;
 
 CREATE TABLE db_user(
-    user_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, 
+    user_id INTEGER(40) PRIMARY KEY NOT NULL AUTO_INCREMENT, 
     firstname VARCHAR(40), 
     lastname VARCHAR(40), 
     username VARCHAR(40), 
-    user_password VARCHAR(10)
+    user_password VARCHAR(10),
     email VARCHAR(40));
 
 CREATE TABLE db_comic(
