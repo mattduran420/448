@@ -1,10 +1,9 @@
-DROP TABLE IF EXISTS db_user;
-DROP TABLE IF EXISTS db_comment;
-DROP TABLE IF EXISTS db_comic;
-DROP TABLE IF EXISTS db_favorite;
 DROP TABLE IF EXISTS db_note;
-DROP TABLE IF EXISTS db_tag;
+DROP TABLE IF EXISTS db_comment;
 DROP TABLE IF EXISTS db_comictag;
+DROP TABLE IF EXISTS db_comic;
+DROP TABLE IF EXISTS db_tag;
+DROP TABLE IF EXISTS db_user;
 
 CREATE TABLE db_user(
     user_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, 
@@ -34,7 +33,7 @@ CREATE TABLE db_comictag(
     tag_id INTEGER,
     comic_id INTEGER,
     foreign key(tag_id) references db_tag(tag_id),
-    foreign key(comic_id) refereces db_comic(comic_id));
+    foreign key(comic_id) references db_comic(comic_id));
 
 CREATE TABLE db_comment(
     comment_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, 
@@ -53,5 +52,5 @@ CREATE TABLE db_note(
     yposition INTEGER,
     user_id INTEGER,
     comic_id INTEGER,
-    foreign key(user_id) references comic_users(user_id), 
-    foreign key(comic_id) references comic(comic_id));
+    foreign key(user_id) references db_user(user_id), 
+    foreign key(comic_id) references db_comic(comic_id));
