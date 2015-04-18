@@ -51,4 +51,3 @@ CREATE TABLE db_note(
     yposition integer,
     foreign key(user_id) references comic_users(user_id), 
     foreign key(comic_id) references comic(comic_id));
-
