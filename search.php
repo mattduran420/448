@@ -89,6 +89,7 @@ include('header.php');
 		  	<option>Amish</option>
 		  	<option>Zimbo</option>
 		  	<option>Pizza</option>
+		  	</select>
 
 		</label>
 		

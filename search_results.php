@@ -39,7 +39,7 @@ if(!$db){
 	exit("Error - could not connect to MySQL");
 }
 
-$er = mysql_select_db("dkersh1");
+$er = mysql_select_db("katp1");
 
 if(!$er){
 	exit("Error - could not select db_user database");
