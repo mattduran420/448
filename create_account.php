@@ -5,11 +5,11 @@ include('header.php');
 <!-- Kat Pfeiffer --> 
 
 <?php 
-	$firstname = mysql_real_escape_string(htmlspecialchars($_POST['firstname']));
-	$lastname = mysql_real_escape_string(htmlspecialchars($_POST['lastname']));
-	$username = mysql_real_escape_string(htmlspecialchars($_POST['username']));
-	$user_password = mysql_real_escape_string(htmlspecialchars($_POST['user_password']));
-	$email = mysql_real_escape_string(htmlspecialchars($_POST['email']));
+	$firstname = $_POST['firstname'];
+	$lastname = $_POST['lastname'];
+	$username = $_POST['username'];
+	$user_password = $_POST['user_password'];
+	$email = $_POST['email'];
 	
 	$db = mysql_connect("studentdb.gl.umbc.edu","katp1","katp1");
 
