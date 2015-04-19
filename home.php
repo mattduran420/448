@@ -2,6 +2,6 @@
 <?php //include('sidebar.php'); ?>
 <a href="?test=5">test</a>
 <?php
-parse_str($_SERVER['QUERY_STRING']);?>
+var_dump($_GET);?>
 
 <?php include('footer.php'); ?>
