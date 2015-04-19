@@ -4,7 +4,7 @@
 
 	//check if user is logged in
 	if(!isset($_SESSION['login']) && $_SERVER['PHP_SELF'] != "/login.php"){
-		header('Location: /login.php');
+		header('Location: login.php');
 	}
 
 ?>
