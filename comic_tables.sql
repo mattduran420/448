@@ -1,8 +1,6 @@
 DROP TABLE IF EXISTS db_note;
 DROP TABLE IF EXISTS db_comment;
-DROP TABLE IF EXISTS db_comictag;
 DROP TABLE IF EXISTS db_comic;
-DROP TABLE IF EXISTS db_tag;
 DROP TABLE IF EXISTS db_user;
 
 CREATE TABLE db_user(
@@ -12,28 +10,18 @@ CREATE TABLE db_user(
     username VARCHAR(40), 
     user_password VARCHAR(10),
     email VARCHAR(40));
-    
-CREATE TABLE db_tag(
-    tag_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, 
-    tag_name VARCHAR(40));  
 
 CREATE TABLE db_comic(
     comic_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, 
     comic_name VARCHAR(40),
     genre VARCHAR(10), 
+    tag VARCHAR(10),
     upload_date DATE,
     img_url VARCHAR(40),
     user_id INTEGER,
     foreign key(user_id) references db_user(user_id),
     rating_total INTEGER, 
     rating_count INTEGER);
-
-CREATE TABLE db_comictag(
-    comictag_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, 
-    tag_id INTEGER,
-    comic_id INTEGER,
-    foreign key(tag_id) references db_tag(tag_id),
-    foreign key(comic_id) references db_comic(comic_id));
 
 CREATE TABLE db_comment(
     comment_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, 
