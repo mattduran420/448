@@ -28,7 +28,7 @@
 		header("location: home.php"); 
 	} else 
 		{
-		$error = "Sorry - Your username or password is invalid";
+		header("location: login.php?error=1");
 		}
 	
 	mysql_close($db); 
