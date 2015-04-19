@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	$error='';
 	require('functions.php');
 	//check if user is logged in
 	if(!isset($_SESSION['login'])){
