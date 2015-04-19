@@ -49,6 +49,7 @@ $result = mysql_query("SELECT comic_name FROM db_comic WHERE genre='$genre' AND 
 
 while($row = mysql_fetch_array($result)){
    	print $row['comic_name'];
+   	print 'YOOOOOO';
 }
 
 include('footer.php');
