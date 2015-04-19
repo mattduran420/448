@@ -4,21 +4,6 @@ include('header.php');
 
 <!-- Kat Pfeiffer -->
 
-<html>
-<head>
-<title> Sign Up </title>
-    
-<!-- BEGIN ASSET INCLUDES -->
-  <link rel="stylesheet" type="text/css" href="assets/styles/base.css">
-  <script type="text/javascript" src="assets/js/jquery.js"></script>
-<!-- END ASSET INCLUDES -->
-  </head>
-  <body>
-  
-
-<div class="main">
-<div id="content">
-
     <p>
 	<form name ="signup" action = "create_account.php">
 	
@@ -59,6 +44,3 @@ include('header.php');
 <?php
 include('footer.php');
 ?>
-
-</body>
-</html>
