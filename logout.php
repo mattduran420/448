@@ -1,8 +1,8 @@
-<!-- Kat Pfeiffer -->
-
 <?php
 include('header.php');
 ?>
+
+<!-- Kat Pfeiffer -->
 
 <?php
 include('home.php');

@@ -1,8 +1,9 @@
-<!-- Kat Pfeiffer -->
-
 <?php
 include('header.php');
 ?>
+
+<!-- Kat Pfeiffer -->
+
 <html>
 <head>
 <title> Sign Up </title>
