@@ -9,7 +9,7 @@ include('header.php');
 	<form name ="search" action = "search_results.php" method="POST">
 
 		<label>
-		  	Tag: <select name="genre">
+		  	Genre: <select name="genre">
 		  	<option disabled selected></option>
 			<option>Music</option>
 			<option>Games</option>
@@ -33,18 +33,18 @@ include('header.php');
 		<label>
 		  	Date: Month <select name="month">
 		  	<option disabled selected></option>
-		  	<option>January</option>
-		  	<option>February</option>
-		  	<option>March</option>
-		  	<option>April</option>
-		  	<option>May</option>
-		 	<option>June</option>
-		  	<option>July</option>
-		  	<option>August</option>
-		  	<option>September</option>
-		  	<option>October</option>
-		  	<option>November</option>
-		  	<option>December</option>
+		  	<option value="01">January</option>
+		  	<option value="02">February</option>
+		  	<option value="03">March</option>
+		  	<option value="04">April</option>
+		  	<option value="05">May</option>
+		 	<option value="06">June</option>
+		  	<option value="07">July</option>
+		  	<option value="08">August</option>
+		  	<option value="09">September</option>
+		  	<option value="10">October</option>
+		  	<option value="11">November</option>
+		  	<option value="12">December</option>
 			</select>
 		</label>
 
@@ -69,7 +69,28 @@ include('header.php');
 		<br />
 
 		<label>
-		  	Keyword: <input type = "text" name = "tag" size = "30" maxlength="30" />
+		  	Tag: <select name="tag">
+		  	<option disabled selected></option>
+		  	<option>Funny</option>
+		  	<option>Stupid</option>
+		  	<option>Sad</option>
+		  	<option>Violent</option>
+		  	<option>Conspiracy theories</option>
+		  	<option>Obama</option>
+		  	<option>Lizard People</option>
+		  	<option>Summer</option>
+		  	<option>Winter</option>
+		  	<option>Spring</option>
+		  	<option>Fall</option>
+		  	<option>Spooky</option>
+		  	<option>Spoopy</option>
+		  	<option>Life is good</option>
+		  	<option>Feminism</option>
+		  	<option>Amish</option>
+		  	<option>Zimbo</option>
+		  	<option>Pizza</option>
+		  	</select>
+
 		</label>
 		
 		<br />
