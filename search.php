@@ -9,7 +9,7 @@ include('header.php');
 	<form name ="search" action = "search_results.php" method="POST">
 
 		<label>
-		  	Tag: <select name="genre">
+		  	Genre: <select name="genre">
 		  	<option disabled selected></option>
 			<option>Music</option>
 			<option>Games</option>
