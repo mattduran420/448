@@ -6,6 +6,9 @@
 		//header('Location: /login.php');
 		echo "test";
 	}
+	else{
+		echo "logged in";
+	}
 
 ?>
 <html>
