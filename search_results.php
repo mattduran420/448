@@ -63,7 +63,7 @@ while($row = mysql_fetch_array($result)){
    	print ("<br />");
    	$comic_file = $row['img_url'];
    	$comic_file_path = "/assets/uploads/" . $comic_file;
-   	?> <img src = <?php $comic_file_path ?>/>
+   	?> <img src ="/assets/uploads/flarp.jpg"/>
    	<?php
    	print("<br />");
 }
