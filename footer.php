@@ -6,7 +6,7 @@
 		<!-- FOOTER -->
 		<div id="footer">
 			<div class="inner-footer">
-				<p>Musician's Ink &copy; 2015</p>
+				<div align="center"><p>Musician's Ink &copy; 2015</p></div>
 			</div>
 		</div>
 		<!-- END FOOTER -->
