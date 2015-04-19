@@ -1,8 +1,8 @@
-<!-- Kat Pfeiffer --> 
-
 <?php
 include('header.php');
 ?>  
+
+<!-- Kat Pfeiffer --> 
 
 <?php 
 	$firstname = mysql_real_escape_string(htmlspecialchars($_POST['firstname']));
