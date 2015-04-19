@@ -5,7 +5,7 @@ include('header.php');
 <!-- Kat Pfeiffer -->
 
     <p>
-	<form name ="signup" action = "create_account.php">
+	<form name ="signup" method="post" action = "create_account.php">
 	
 	<label>
 	  First Name: <input type = "text" name = "firstname" size = "30" maxlength="30" />
