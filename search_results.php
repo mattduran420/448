@@ -61,7 +61,8 @@ $result = mysql_query($select_query);
 while($row = mysql_fetch_array($result)){
    	print ("$row[comic_name]");
    	print ("<br />");
-   	print ("$row[img_url]");
+   	$comic_file = $row['img_url']);
+   	echo $comic_file;
    	print("<br />");
 }
 
