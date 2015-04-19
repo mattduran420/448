@@ -1,16 +1,8 @@
 <?php
-include('header.php');
-?>
+session_start();
+require('functions.php');
 
-<!-- Kat Pfeiffer -->
-
-<?php
 if(session_destroy()) 
 {
 header("Location: home.php"); 
 }
-?>
-
-<?php
-include('footer.php');
-?>
