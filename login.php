@@ -2,7 +2,7 @@
 include('header.php');
 ?>
     <p>
-	<form name ="login" method="get" action = "auth.php">
+	<form name ="login" method="post" action = "auth.php">
 	
 	<label>
 	  Username: <input type = "text" name = "username" size ="30" maxlength="30" 
