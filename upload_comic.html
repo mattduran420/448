@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload Comic</title>
+</head>
+		<link rel="stylesheet" type="text/css" href="assets/styles/base.css">
+		<script type="text/javascript" src="assets/js/jquery.js"></script>
+		<script type="text/javascript" src="assets/js/upload_comic.js"></script>
+<body>
+	<div id = "upload_comic_box">
+		<form action "upload_comic.php" method = "post" id = "upload_comic">
+			<select id = "rating_comic">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+			</select>
+			<input type = "file" id = "comic" name = "comic"/><br />
+			<input type = "submit" id = "submit" />
+			
+		</form>
+	</div>
+</body>
+</html>
