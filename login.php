@@ -39,7 +39,7 @@ include('header.php');
 	<br />
 	<br />
 	
-	<input type = "submit" value="Submit" />
+	<input type = "submit" value="Login" />
 	</form>
 	</p>
 
