@@ -1,6 +1,5 @@
 <?php 
 	session_start();
-	$error='';
 	require('functions.php');
 	//check if user is logged in
 	if(!isset($_SESSION['login'])){
@@ -27,12 +26,16 @@
 		<div id="header">
 			<div id="header-nav" class="pull-right">
 				<ul>
+					<?php if(!isset($_SESSION['login'])){ ?>
 					<li><a href="login.php">Login</a></li>
 					<li><a href="register.php">Sign Up</a></li>
+					<?php } ?>
 					<li><a href="usecase2.html">View/Edit Drafts</a></li>
 					<li><a href="usecase3.html">Upload Comic</a></li>
 					<li><a href="usecase4.html">Search Comics</a></li>
+					<?php if(isset($_SESSION['login'])){ ?>
 					<li id="logout"><a href="logout.php">Log Out</a></li>
+					<?php } ?>
 				</ul>
 			</div>
 			<div id="logo">
