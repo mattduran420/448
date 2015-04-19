@@ -1,10 +1,6 @@
 <?php
-session_start();
-?>
+	session_start();
 
-<!-- Kat Pfeiffer --> 
-
-<?php 
 	$username = $_POST['username'];
 	$user_password = $_POST['user_password'];
 	
