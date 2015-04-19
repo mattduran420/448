@@ -45,8 +45,15 @@ if(!$er){
 	exit("Error - could not select db_user database");
 }
 
-$select_query = "SELECT comic_name FROM db_comic WHERE genre='$genre' AND MONTH(upload_date)='$month' 
-				AND YEAR(upload_date)='$year' AND tag='$tag'";
+$select_query = "SELECT comic_name FROM db_comic WHERE (genre='$genre' AND MONTH(upload_date)='$month' 
+				AND YEAR(upload_date)='$year' AND tag='$tag') OR (genre='$genre' AND MONTH(upload_date)='$month' 
+				AND YEAR(upload_date)='$year') OR (MONTH(upload_date)='$month' AND YEAR(upload_date)='$year' 
+				AND tag='$tag') OR (YEAR(upload_date)='$year' AND tag='$tag' AND genre='$genre') OR (tag='$tag' 
+				AND genre='$genre' AND MONTH(upload_date)='$month') OR (genre='$genre' AND MONTH(upload_date)='$month')
+				OR (genre='$genre' AND YEAR(upload_date)='$year') OR (genre='$genre' AND tag='$tag') 
+				OR (MONTH(upload_date)='$month' AND YEAR(upload_date)='$year') OR (MONTH(upload_date)='$month' 
+				AND tag='$tag') OR (YEAR(upload_date)='$year' AND tag='$tag') OR genre='$genre' 
+				OR MONTH(upload_date)='$month' OR YEAR(upload_date)='$year' OR tag='$tag'";
 	
 $result = mysql_query($select_query);
 
