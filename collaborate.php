@@ -11,6 +11,9 @@ if(!$er)
 {
 	exit("Error - could not select db_user database");
 }
+
+$query = mysql_query("insert into db_comic values(2,'test','sports','feminism','2015-04-15','1.png',1,12,3)",$db);
+
 ?>
 <!-- EDIT HERE -->
 <div align="center">
@@ -28,7 +31,7 @@ if($_FILES['photo']['name'])
 	if(!$_FILES['photo']['error'])
 	{
 		$new_file_name = strtolower($_FILES['photo']['name']);
-		if($_FILES['photo']['size'] > 1024000)
+		if($_FILES['photo']['size'] > 4096000)
 		{
 			$valid_file = false;
 		}

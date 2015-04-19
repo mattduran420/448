@@ -17,7 +17,7 @@ CREATE TABLE db_comic(
     genre VARCHAR(10), 
     tag VARCHAR(40),
     upload_date DATE,
-    img_url VARCHAR(40),
+    image_payload blob not null,
     user_id INTEGER,
     foreign key(user_id) references db_user(user_id),
     rating_total INTEGER, 
