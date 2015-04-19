@@ -1,5 +1,5 @@
 <?php
-include('header.php');
+session_start();
 ?>
 
 <!-- Kat Pfeiffer --> 
@@ -36,8 +36,4 @@ include('header.php');
 		}
 	
 	mysql_close($db); 
-?>
-
-<?php
-include('footer.php');
 ?>
