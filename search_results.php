@@ -46,7 +46,7 @@ if(!$er){
 	exit("Error - could not select db_user database");
 }
 
-$select_query = "SELECT comic_name FROM db_comic WHERE (genre='$genre' AND MONTH(upload_date)='$month' 
+$select_query = "SELECT comic_name, img_url FROM db_comic WHERE (genre='$genre' AND MONTH(upload_date)='$month' 
 				AND YEAR(upload_date)='$year' AND tag='$tag') OR (genre='$genre' AND MONTH(upload_date)='$month' 
 				AND YEAR(upload_date)='$year') OR (MONTH(upload_date)='$month' AND YEAR(upload_date)='$year' 
 				AND tag='$tag') OR (YEAR(upload_date)='$year' AND tag='$tag' AND genre='$genre') OR (tag='$tag' 
