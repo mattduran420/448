@@ -26,7 +26,7 @@
 					<li><a href="login.php">Login</a></li>
 					<li><a href="register.php">Sign Up</a></li>
 					<?php } ?>
-					<li><a href="usecase2.html">View/Edit Drafts</a></li>
+					<li><a href="collaborate.php">View/Edit Drafts</a></li>
 					<li><a href="usecase3.html">Upload Comic</a></li>
 					<li><a href="usecase4.html">Search Comics</a></li>
 					<?php if(isset($_SESSION['login'])){ ?>
