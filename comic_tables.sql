@@ -17,11 +17,12 @@ CREATE TABLE db_comic(
     genre VARCHAR(10), 
     tag VARCHAR(40),
     upload_date DATE,
-    image_payload blob not null,
+    image_payload BLOB NOT NULL,
     user_id INTEGER,
-    foreign key(user_id) references db_user(user_id),
+    comic_status INTEGER,
     rating_total INTEGER, 
-    rating_count INTEGER);
+    rating_count INTEGER,
+    foreign key(user_id) references db_user(user_id));
 
 CREATE TABLE db_comment(
     comment_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, 

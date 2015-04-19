@@ -1,19 +1,11 @@
 <?php include('header.php'); ?>
 <?php
-$db = mysql_connect("studentdb.gl.umbc.edu","katp1","katp1");
-if(!$db)
-{
-	exit("Error - could not connect to MySQL");
-}
 
-$er = mysql_select_db("katp1");
-if(!$er)
-{
-	exit("Error - could not select db_user database");
-}
+$db = mysql_connect("studentdb.gl.umbc.edu","mduran2","mduran2");
+if(!$db) exit("Error - could not connect to MySQL");
 
-$query = mysql_query("insert into db_comic values(2,'test','sports','feminism','2015-04-15','1.png',1,12,3)",$db);
-
+$er = mysql_select_db("mduran2");
+if(!$er) exit("Error - could not select db_user database");
 ?>
 <!-- EDIT HERE -->
 <div align="center">
@@ -25,21 +17,30 @@ $query = mysql_query("insert into db_comic values(2,'test','sports','feminism','
 	<img src="">
 
 <?php
-//if they DID upload a file...
+///////////////////
+// UPLOAD FILE HANDLER
+///////////////////
 if($_FILES['photo']['name'])
 {
 	if(!$_FILES['photo']['error'])
 	{
+		//get file name from form data
 		$new_file_name = strtolower($_FILES['photo']['name']);
-		if($_FILES['photo']['size'] > 4096000)
-		{
-			$valid_file = false;
-		}
-		else{
-			var_dump($upload_path.$new_file_name);
-			echo "<br/>";
-			var_dump(getcwd().'/assets/uploads/'.$new_file_name);
+		if(!$_FILES['photo']['size'] > 4096000){
+			//move file from temp directory to uploads directory in php-files
 			move_uploaded_file($_FILES['photo']['tmp_name'], $upload_path.$new_file_name);
+			//read file and convert to binary
+			$file = fopen($upload_path.$new_file_name, "rb") or die ("Error - could not open file");
+			$payload = fread($file, filesize($upload_path.$new_file_name));
+			//escape binary data
+			$payload = addslashes($payload);
+			fclose($file);
+			//INSERT IMAGE AS BINARY BLOB INTO DATABASE
+
+			/* THIS LINE NEEDS HEAVY MODIFACTION TO ACCEPT POST DATA */
+			$query = "insert into db_comic values(1,'test_name','sports_genre','feminism_tag','2015-04-15','$payload',1,12,3)";
+			
+			$result = mysql_query($query,$db);
 		}
 	}
 }

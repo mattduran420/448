@@ -5,14 +5,14 @@
 	$username = $_POST['username'];
 	$user_password = $_POST['user_password'];
 	
-	$db = mysql_connect("studentdb.gl.umbc.edu","katp1","katp1");
+	$db = mysql_connect("studentdb.gl.umbc.edu","mduran2","mduran2");
 
 	if(!$db)
 	{
 		exit("Error - could not connect to MySQL");
 	}
 	
-	$er = mysql_select_db("katp1");
+	$er = mysql_select_db("mduran2");
 	if(!$er)
 	{
 		exit("Error - could not select db_user database");
@@ -28,9 +28,9 @@
 		$_SESSION['login']=$username; 
 		header("location: home.php"); 
 	} else 
-		{
-		header("location: login.php?error=1");
-		}
+	{
+	header("location: login.php?error=1");
+	}
 	
 	mysql_close($db); 
 ?>
