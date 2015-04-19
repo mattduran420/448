@@ -20,7 +20,7 @@ if($genre!=""){
 }
 
 if($month!=""){
-	print " published in the month of " . $month;
+	print " published in the " . $month . "th month";
 }
 
 if($year!=""){
