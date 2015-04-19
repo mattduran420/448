@@ -1,9 +1,47 @@
 <?php include('header.php'); ?>
+<?php
+$db = mysql_connect("studentdb.gl.umbc.edu","katp1","katp1");
+if(!$db)
+{
+	exit("Error - could not connect to MySQL");
+}
 
+$er = mysql_select_db("katp1");
+if(!$er)
+{
+	exit("Error - could not select db_user database");
+}
+?>
 <!-- EDIT HERE -->
 <div align="center">
 	<h3>Use Case 2</h3>
 	<h2>Drafts</h2>
+	<?php
+	$upload_path = substr(getcwd(), 0, strpos(getcwd(),'www')) . "php-files/";
+	?>
+	<img src="">
+
+<?php
+//if they DID upload a file...
+if($_FILES['photo']['name'])
+{
+	if(!$_FILES['photo']['error'])
+	{
+		$new_file_name = strtolower($_FILES['photo']['name']);
+		if($_FILES['photo']['size'] > 1024000)
+		{
+			$valid_file = false;
+		}
+		else{
+			var_dump($upload_path.$new_file_name);
+			echo "<br/>";
+			var_dump(getcwd().'/assets/uploads/'.$new_file_name);
+			move_uploaded_file($_FILES['photo']['tmp_name'], $upload_path.$new_file_name);
+		}
+	}
+}
+?>
+
 	<div id="comic-playground">
 		<!-- BEGIN SAMPLE COMIC NOTES -->
 		<!-- COMIC NOTES WILL BE INSERTED DYNAMICALLY -->
