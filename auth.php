@@ -5,8 +5,8 @@ include('header.php');
 <!-- Kat Pfeiffer --> 
 
 <?php 
-	$username = mysql_real_escape_string(htmlspecialchars($_POST['username']));
-	$user_password = mysql_real_escape_string(htmlspecialchars($_POST['user_password']));
+	$username = $_POST['username'];
+	$user_password = $_POST['user_password'];
 	
 	$db = mysql_connect("studentdb.gl.umbc.edu","katp1","katp1");
 
