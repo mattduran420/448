@@ -36,7 +36,7 @@
 				</ul>
 			</div>
 			<div id="logo">
-				<a href="index.html">
+				<a href="/">
 					<img src="assets/img/logo.png" height="150px" alt="Musicians Ink logo">
 				</a>
 			</div>
