@@ -26,7 +26,7 @@ include('header.php');
 	<br />
 	
 	<label>
-	  Password: <input type = "text" name = "user_password" size = "30" maxlength = "30" />
+	  Password: <input type = "password" name = "user_password" size = "30" maxlength = "30" />
 	</label>
 	<br />
 	<br />
