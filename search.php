@@ -2,12 +2,6 @@
 include('header.php');
 ?>
 
-  <title> Search Comics </title>  
-  <link rel="stylesheet" type="text/css" href="assets/styles/base.css">
-  <script type="text/javascript" src="assets/js/jquery.js"></script>
-
-	<div class="main">
-	<div id="content">
 	<h1> Search Comics </h1>
     
     <p>
