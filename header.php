@@ -28,7 +28,7 @@
 					<?php } ?>
 					<li><a href="collaborate.php">View/Edit Drafts</a></li>
 					<li><a href="usecase3.html">Upload Comic</a></li>
-					<li><a href="usecase4.html">Search Comics</a></li>
+					<li><a href="search.php">Search Comics</a></li>
 					<?php if(isset($_SESSION['login'])){ ?>
 					<li id="logout"><a href="logout.php">Log Out</a></li>
 					<?php } ?>
