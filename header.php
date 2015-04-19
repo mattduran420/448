@@ -1,6 +1,11 @@
 <?php
 	session_start();
 	require('functions.php');
+	//check if user is logged in
+	if(!$_SESSION['is_authenticated']){
+		header('Location: /login.php');
+	}
+
 ?>
 <html>
 	<head>
