@@ -69,7 +69,27 @@ include('header.php');
 		<br />
 
 		<label>
-		  	Keyword: <input type = "text" name = "tag" size = "30" maxlength="30" />
+		  	Tag: <select name="tag">
+		  	<option disabled selected></option>
+		  	<option>Funny</option>
+		  	<option>Stupid</option>
+		  	<option>Sad</option>
+		  	<option>Violent</option>
+		  	<option>Conspiracy theories</option>
+		  	<option>Obama</option>
+		  	<option>Lizard People</option>
+		  	<option>Summer</option>
+		  	<option>Winter</option>
+		  	<option>Spring</option>
+		  	<option>Fall</option>
+		  	<option>Spooky</option>
+		  	<option>Spoopy</option>
+		  	<option>Life is good</option>
+		  	<option>Feminism</option>
+		  	<option>Amish</option>
+		  	<option>Zimbo</option>
+		  	<option>Pizza</option>
+
 		</label>
 		
 		<br />
