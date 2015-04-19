@@ -21,6 +21,7 @@
 					<li><a href="usecase2.html">View/Edit Drafts</a></li>
 					<li><a href="usecase3.html">Upload Comic</a></li>
 					<li><a href="usecase4.html">Search Comics</a></li>
+					<li id="logout"><a href="logout.php">Log Out</a></li>
 				</ul>
 			</div>
 			<div id="logo">
