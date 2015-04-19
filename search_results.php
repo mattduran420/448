@@ -45,7 +45,7 @@ if(!$er){
 	exit("Error - could not select db_user database");
 }
 	
-$sql_select = "SELECT comic_name FROM db_comic, db_tag WHERE genre='$genre' AND MONTH(upload_date)=$month
+$sql_select = "SELECT comic_name FROM db_comic WHERE genre='$genre' AND MONTH(upload_date)=$month
 				AND YEAR(upload_date)=$year AND tag='$tag'";
 
 $result = mysql_query($sql_select);
