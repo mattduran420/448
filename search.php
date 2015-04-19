@@ -1,5 +1,8 @@
+<?php
+include('header.php');
+?>
 
-  <head>
+<head>
     <title> Search Comics </title>
     
 <!-- BEGIN ASSET INCLUDES -->
@@ -10,9 +13,6 @@
   <body>
   
 <!-- HEADER -->
-<?php
-include('header.php');
-?>
 
 <div class="main">
 <div id="content">
