@@ -17,7 +17,7 @@ include('header.php');
 	</label>
 	<br />
 	<?php if(isset($_GET['error'])) { ?>
-	<p><span style="color:red;">ERROR</span></p>
+	<p><span style="color:red;">ERROR - incorrect login information</span></p>
 	<?php } ?>
 	
 	<input type = "submit" value="Login" />
