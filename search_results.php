@@ -32,6 +32,7 @@ if($tag!=""){
 }
 
 print ".";
+print "<br />";
 
 $db = mysql_connect("studentdb.gl.umbc.edu","katp1","katp1");
 
@@ -59,6 +60,9 @@ $result = mysql_query($select_query);
 
 while($row = mysql_fetch_array($result)){
    	print ("$row[comic_name]");
+   	print ("<br />");
+   	print ("$row[img_url]");
+   	print("<br />");
 }
 
 include('footer.php');
