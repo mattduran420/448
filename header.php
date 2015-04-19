@@ -17,10 +17,10 @@
 		<div id="header">
 			<div id="header-nav" class="pull-right">
 				<ul>
-					<li><a href="usecase1.html">Use Case 1</a></li>
-					<li><a href="usecase2.html">Use Case 2</a></li>
-					<li><a href="usecase3.html">Use Case 3</a></li>
-					<li><a href="usecase4.html">Use Case 4</a></li>
+					<li><a href="usecase1.html">Login/Sign Up</a></li>
+					<li><a href="usecase2.html">View/Edit Drafts</a></li>
+					<li><a href="usecase3.html">Upload Comic</a></li>
+					<li><a href="usecase4.html">Search Comics</a></li>
 				</ul>
 			</div>
 			<div id="logo">
