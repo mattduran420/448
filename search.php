@@ -143,12 +143,6 @@ include('header.php');
 
 	<br />
 	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
 		
 <!-- FOOTER -->
 <?php
