@@ -1,6 +1,4 @@
 
-<html>
-
   <head>
     <title> Search Comics </title>
     
@@ -156,5 +154,3 @@ include('header.php');
 <?php
 include('footer.php');
 ?>
-	</body>
-</html>
