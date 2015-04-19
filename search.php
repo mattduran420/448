@@ -9,7 +9,7 @@ include('header.php');
 	<form name ="search" action = "search_results.php" method="POST">
 
 		<label>
-		  	Tag: <select name="tag">
+		  	Tag: <select name="genre">
 		  	<option disabled selected></option>
 			<option>Music</option>
 			<option>Games</option>
@@ -69,7 +69,7 @@ include('header.php');
 		<br />
 
 		<label>
-		  	Keyword: <input type = "text" name = "keyword" size = "30" maxlength="30" />
+		  	Keyword: <input type = "text" name = "tag" size = "30" maxlength="30" />
 		</label>
 		
 		<br />
