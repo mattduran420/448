@@ -6,7 +6,7 @@ include('header.php');
     
     <p>
 	
-	<form name ="search" action = "search_results.php">
+	<form name ="search" action = "search_results.php" method="POST">
 
 		<label>
 		  	Tag: <select name="tag">
