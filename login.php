@@ -16,7 +16,9 @@ include('header.php');
 	  			placeholder="password" required/>
 	</label>
 	<br />
-	<br />
+	<?php if(isset($_GET['error'])) { ?>
+	<p><span style="color:red;">ERROR</span></p>
+	<?php } ?>
 	
 	<input type = "submit" value="Login" />
 	</form>
