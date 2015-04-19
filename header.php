@@ -35,7 +35,7 @@
 				</ul>
 			</div>
 			<div id="logo">
-				<a href="/">
+				<a href="<?php getcwd(); ?>">
 					<img src="assets/img/logo.png" height="150px" alt="Musicians Ink logo">
 				</a>
 			</div>
