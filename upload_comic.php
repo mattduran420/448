@@ -1,71 +1,62 @@
-<html>
-<head>
-	<title>
-		Display Comics
-	</title>
-</head>
+<?php
+include('header.php');
+?>
+	
+	<form action="process_upload.php" method="post" enctype="multipart/form-data">
+		Genre: <select name = "genre">
+			<option disabled selected></option>
+			<option>Music</option>
+			<option>Games</option>
+			<option>Movies</option>
+			<option>Food</option>
+			<option>Sports</option>
+			<option>Travel</option>
+			<option>Comedy</option>
+			<option>Entertainment</option>
+			<option>Cars/Auto</option>
+			<option>Education</option>
+			<option>Animals/Wildlife</option>
+			<option>Science</option>
+			<option>Other</option>
+			</select>
+			<br /><br />
+		Comic name: <input type = "text" name = "comic_name" /><br /><br />
 
-<body>
+		Tag: <select name="tag">
+		  	<option disabled selected></option>
+		  	<option>Funny</option>
+		  	<option>Stupid</option>
+		  	<option>Sad</option>
+		  	<option>Violent</option>
+		  	<option>Conspiracy theories</option>
+		  	<option>Obama</option>
+		  	<option>Lizard People</option>
+		  	<option>Summer</option>
+		  	<option>Winter</option>
+		  	<option>Spring</option>
+		  	<option>Fall</option>
+		  	<option>Spooky</option>
+		  	<option>Spoopy</option>
+		  	<option>Life is good</option>
+		  	<option>Feminism</option>
+		  	<option>Amish</option>
+		  	<option>Zimbo</option>
+		  	<option>Pizza</option>
+		  	</select>
+		  	<br /><br />
 
-	<?php
-		include('access_database.php');
-		$comic_name = $_POST('comic');
-		$genre = $_POST('genre');
-		$date = $_POST('upload_date');
-		$image = $_POST('image');
+		Status :<select name = "status">
+			<option disabled selected></option>
+			<option value = '1'>Draft</option>
+			<option value = '2'>Published</option>
+		</select>
+		<br /><br />	
+		Your Comic: <input type="file" name="photo" size="25" /><br /><br />
 		
-	//fileToUpload is a value of name attribute in file input
-		$insert_comic = "INSERT INTO db_comic(comic_name, genre, upload_date, img_url)
-						values($comic_name, $genre, $date, $image)";
-		$rating_comic = $_POST('rating_comic');
-		$fileLocation = mysql_query($insert_comic);
-		//$target_dir = "uploads/";
-		$target_file = $fileLocation.basename($_FILES["comic"]["name"]);
-		$fileUploaded = 1;
-		$fileExtentionType = pathinfo($target_file, PATHINFO_EXTENSION);
-			if(isset($_POST["submit"])){
-				$check = getimagesize($_FILES["comic"]["tmp_name"]);
-				if($check !== false){
-					echo "File is an image -" . $check["mime"] . ".";
-					$fileUploaded = 1;
-				
-				} else {
-					echo "File is not an image"};
-					$fileUploaded = 0;
-				}
-			}
 
-			//Check if file already exists
-			if(file_exists($target_file)){
-				echo "File already exists";
-				$fileUploaded = 0;
-			}
+	<input type="submit" name="submit" value="Submit" />
+</form>
 
-			// Allow certain file formats
-			if(fileExtentionType != "jpg" && ileExtentionType != "png" 
-				&& ileExtentionType != "jpeg" && ileExtentionType != "gif"){
-				echo "Allow only JPG, PNG, JPEG, and GIF";
-				$fileUploaded = 0;
-			}
-
-			// Check if file is uploaded
-			if($fileUploaded == 0){
-				echo "File is not uploaded";
-			} else 
-			if(move_uploaded_file($_FILES["comic"] ["tmp_name"], $target_file)) {
-				echo "File" . basename(($_FILES["comic"]["name"])). "has been uploaded.";
-			} else {
-				echo "Error - file cannot be uploaded";
-			}
-
-			// Display the image after uploaded
-			$selectComicQuery = "SELECT img_url from db_comic ORDER BY comic_id DESC";
-			$comicToDisplay = mysql_query($selectComicQuery);
-			$insert_rating = "INSERT INTO db_comic(comic_name, genre, upload_date, img_url, user_id, comictag_id, tag_id, rating_total, rating_count)
-							values()";
-			echo mysql_result($comicToDisplay, row)
-
-	?>
-</body>
-
-</html>
+<?php
+include('footer.php');
+?>
