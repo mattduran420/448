@@ -9,14 +9,22 @@ if(!$er) exit("Error - could not select db_user database");
 ?>
 <!-- EDIT HERE -->
 <div align="center">
-	<h3>Use Case 2</h3>
-	<h2>Drafts</h2>
+	<?php
+		$querystring  = "SELECT comic_id,comic_name, genre, tag, upload_date FROM db_comic
+			where comic_id = " . $_GET['id'];
+		$results = mysql_query($querystring, $db);
+		if(!$results){
+			die("error:" . mysql_error());
+		}
+		while($row = mysql_fetch_array($results)){
+			echo "<h1>" . $row['comic_name'] . "</h1>";
+			echo "<h2>Draft</h2>";
+		}
+
+	?>
 	<div id="comic-playground">
-		<!-- BEGIN SAMPLE COMIC NOTES -->
-		<!-- COMIC NOTES WILL BE INSERTED DYNAMICALLY -->
 		<div id="note-container">
-			<!-- FOR NOTE IN NOTES -->
-			<div class="comic-note" style="margin-top:88px;margin-left:55px;">
+			<!-- <div class="comic-note" style="margin-top:88px;margin-left:55px;">
 				<a class="note-link" href="javascript:void(0)" onclick="toggleNote('note-1');">X</a>
 				<div class="note-body" id="note-1">
 					<p>Note added by <a href="#">Jake</a><br/>
@@ -24,27 +32,38 @@ if(!$er) exit("Error - could not select db_user database");
 					</p>
 					<p>I have no friends!</p>
 				</div>
-			</div>
-			<!-- END FOOR LOOP -->
-			<!-- END SAMPLE COMIC NOTES -->
+			</div> -->
 			<img id="comic" src="images.php?id=<?php echo $_GET['id']; ?>" class="comic-spotlight">
 		</div>
 	</div>
 </div>
+<!-- example add note form with no javascript -->
+<form action="process_note.php" method="post">
+	<input type="hidden" name="comic_id" value="<?php echo $_GET['id']; ?>"><br/>
+	<textarea name="note">
+	</textarea><br/>
+	<input type="submit" value="Leave Note!">
+</form>
+<br/>
 
+<!-- end example -->
 <!-- BEGIN LISTED NOTES -->
 <div class="something">
-	<!-- FOR NOTE IN NOTES -->
-	<div class="listed-comic-note">
+<?php
+	$querystring  = "select * from db_notes where comic_id = " . $_GET['id'];
+	$results = mysql_query($querystring, $db);
+	if(!$results){
+		echo "<h3> NO COMMENTS </h3>";
+	}
+	else{
+		while($row = mysql_fetch_array($results)){ ?>
 		<div class="comment-body">
-			<p>Note added by <a href="#">Jake</a><br/>
-			1:58 AM 3/17/2015
-			</p>
-			<p>I have no friends!</p>
+			<p><?php echo "<p>" . $row['noteContent'] . "</p>"; ?></p>
+			<p><?php echo "<p>" . $row['note_time'] . "</p>"; ?></p>
 		</div>
-	</div>
-	<!-- END FOOR LOOP -->
+<?php }
+}
+?>
 </div>
-<!-- END LISTED NOTES -->
-
+<!-- end listed notes -->
 <?php include('footer.php'); ?>

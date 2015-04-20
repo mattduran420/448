@@ -12,17 +12,17 @@ $results = mysql_query($querystring, $db);
 if(!$results){
 	die("error:" . mysql_error());
 }
-
-while($row = mysql_fetch_array($results)){
-	echo '<a href=edit_draft.php?id='.$row['comic_id'].'>';
-	echo '<img src="images.php?id='.$row['comic_id'].'">';
-	echo '</a><br/>';
-	echo $row['comic_name'] . " ";
-	echo $row['genre'] . " ";
-	echo $row['tag'] . " ";
-	echo $row['upload_date'] . " ";
-	echo "<br/>" . " ";
+else{
+	while($row = mysql_fetch_array($results)){
+		echo '<a href=edit_draft.php?id='.$row['comic_id'].'>';
+		echo '<img src="images.php?id='.$row['comic_id'].'">';
+		echo '</a><br/>';
+		echo $row['comic_name'] . " ";
+		echo $row['genre'] . " ";
+		echo $row['tag'] . " ";
+		echo $row['upload_date'] . " ";
+		echo "<br/>" . " ";
+	}
 }
-
 include("footer.php");
 ?>
