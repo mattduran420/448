@@ -34,7 +34,7 @@ if($tag!=""){
 }
 
 print ".";
-print "<br />";
+print "<br /><br />";
 
 $db = mysql_connect("studentdb.gl.umbc.edu","mduran2","mduran2");
 
