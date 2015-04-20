@@ -16,11 +16,12 @@
 		exit("Error - could not select database");
 	}
 	
-	$query = mysql_query("select comic_name, genre, tag, upload_date,
-	comic_status, rating_total, rating_count from db_comics", $db);	
-						  
+	$query = mysql_query("select comic_id from db_comic;", $db);	
+	if(!mysql_query($query,$db)){
+			 die('Insert Row Failed!' . mysql_error());
+			}
 	while ($rows = mysql_fetch_assoc($query)) {
-    echo images.php?id=$rows['comic_id']; 
+    echo '<img src="images.php?id=$rows[\'comic_id\']">'; 
     echo $rows['comic_name'];
     echo $rows['genre'];
     echo $rows['tag'];
