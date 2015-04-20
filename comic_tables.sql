@@ -15,7 +15,7 @@ CREATE TABLE db_user(
 CREATE TABLE db_comic(
     comic_id INTEGER AUTO_INCREMENT NOT NULL, 
     comic_name VARCHAR(40),
-    genre VARCHAR(10), 
+    genre VARCHAR(40), 
     tag VARCHAR(40),
     upload_date DATE,
     image_payload BLOB NOT NULL,
