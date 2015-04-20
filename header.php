@@ -9,7 +9,7 @@
 ?>
 <html>
 	<head>
-		<title>Home | Musician's Ink</title>
+		<title>Musician's Ink</title>
 		<!-- BEGIN ASSET INCLUDES -->
 		<link rel="stylesheet" type="text/css" href="assets/styles/base.css">
 		<script type="text/javascript" src="assets/js/jquery.js"></script>
