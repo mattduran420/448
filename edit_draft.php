@@ -50,10 +50,10 @@ if(!$er) exit("Error - could not select db_user database");
 <!-- BEGIN LISTED NOTES -->
 <div class="something">
 <?php
-	$querystring  = "select * from db_notes where comic_id = " . $_GET['id'];
+	$querystring  = "select * from db_note where comic_id = " . $_GET['id'];
 	$results = mysql_query($querystring, $db);
 	if(!$results){
-		echo "<h3> NO COMMENTS </h3>";
+		die("error:" . mysql_error());
 	}
 	else{
 		while($row = mysql_fetch_array($results)){ ?>
