@@ -46,7 +46,7 @@ if(!$er){
 	exit("Error - could not select db_user database");
 }
 
-$select_query = "SELECT comic_name, img_url FROM db_comic WHERE (genre='$genre' AND MONTH(upload_date)='$month' 
+$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE (genre='$genre' AND MONTH(upload_date)='$month' 
 				AND YEAR(upload_date)='$year' AND tag='$tag') OR (genre='$genre' AND MONTH(upload_date)='$month' 
 				AND YEAR(upload_date)='$year') OR (MONTH(upload_date)='$month' AND YEAR(upload_date)='$year' 
 				AND tag='$tag') OR (YEAR(upload_date)='$year' AND tag='$tag' AND genre='$genre') OR (tag='$tag' 
@@ -64,9 +64,8 @@ if(!mysql_query($query,$db)){
 while($row = mysql_fetch_array($result)){
    	print ("$row[comic_name]");
    	print ("<br />");
-   	$comic_file = $row['img_url'];
-   	$comic_file_path = "assets/uploads/" . $comic_file;
-   	?> <img src =<?php echo $comic_file_path ?>>
+   	$comic_id = $row['comic_id'];
+   	?><img src =images.php?id=<?php echo $comic_id ?>>
    	<?php
    	print("<br />");
 }
