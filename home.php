@@ -23,12 +23,12 @@
 	while ($rows = mysql_fetch_assoc($query)) {?>
     <?php echo '<img src="images.php?id='.$rows['comic_id'].'"><br/>'; ?>
     <h3><?php echo $rows['comic_name']; ?></h3>
-    <p><?php echo $rows['genre'];?>
-    <?php echo $rows['tag'];?>
-    <?php echo $rows['upload_date'];?>
-    <?php echo $rows['comic_status'];?>
-    <?php echo $rows['rating_total'];?>
-    <?php echo $rows['rating_count'];?></p>
+    <p> Genre:&nbsp; <?php echo $rows['genre'];?>
+    Tag:&nbsp; <?php echo $rows['tag'];?>
+    Date Uploaded:&nbsp; <?php echo $rows['upload_date'];?>
+    Status:&nbsp; <?php echo $rows['comic_status'];?>
+    Rating Total:&nbsp; <?php echo $rows['rating_total'];?>
+    Rating Count:&nbsp; <?php echo $rows['rating_count'];?></p>
     <?php echo "<br/>"; ?>
 	<?php } ?>
 
