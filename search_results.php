@@ -64,18 +64,18 @@ if(!mysql_query($select_query,$db)){
 	die('Insert Row Failed!' . mysql_error());
 }
 
-while($row = mysql_fetch_array($result)){
-	if(empty($row)){
-		print"No results found."
-	}else{
-	   	print ("$row[comic_name]");
+if(mysql_num_rows($result)>0){
+	while($row = mysql_fetch_array($result)){
+		print ("$row[comic_name]");
 	   	print ("<br />");
 	   	$comic_id = $row['comic_id'];
-	   	?><img src =images.php?id=<?php echo $comic_id ?>>
-	   	<?php
-	   	print("<br />");
+	   	?><img src ="images.php?id=<?php echo $comic_id ?>"/>
+	   	<?php print("<br /><br />");
 	}
+}else{ 
+	print "No results found.";
 }
+
 
 include('footer.php');
 
