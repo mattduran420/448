@@ -2,6 +2,8 @@
 
 include('header.php');
 
+//Author: Daniel Kershner
+
 $genre = $_POST['genre'];
 $month = $_POST['month'];
 $year = $_POST['year'];

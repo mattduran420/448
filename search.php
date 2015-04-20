@@ -2,6 +2,8 @@
 include('header.php');
 ?>
 
+<!-- Author: Daniel Kershner -->
+
 	<h1> Search Comics </h1>
     
     <p>
