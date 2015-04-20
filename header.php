@@ -34,7 +34,7 @@
 				</ul>
 			</div>
 			<div id="logo">
-				<a href="<?php getcwd(); ?>">
+				<a href="<?php echo substr($str, 0,strrpos(getcwd(), '/')); ?>">
 					<img src="assets/img/logo.png" height="150px" alt="Musician's Ink logo">
 				</a>
 			</div>

@@ -16,21 +16,20 @@
 		exit("Error - could not select database");
 	}
 	
-	$query = mysql_query("select * from db_comic", $db);	
+	$query = mysql_query("select * from db_comic limit 0,5", $db);	
 	if(!$query){
 		die(mysql_error());
 	}
-	while ($rows = mysql_fetch_assoc($query)) {
-    echo '<img src="images.php?id='.$rows['comic_id'].'"><br/>'; 
-    echo $rows['comic_name'];
-    echo $rows['genre'];
-    echo $rows['tag'];
-    echo $rows['upload_date'];
-    echo $rows['comic_status'];
-    echo $rows['rating_total'];
-    echo $rows['rating_count'];
-    echo "<br/>";
-	}
-	?>
+	while ($rows = mysql_fetch_assoc($query)) {?>
+    <?php echo '<img src="images.php?id='.$rows['comic_id'].'"><br/>'; ?>
+    <h3><?php echo $rows['comic_name']; ?></h3>
+    <p><?php echo $rows['genre'];?>
+    <?php echo $rows['tag'];?>
+    <?php echo $rows['upload_date'];?>
+    <?php echo $rows['comic_status'];?>
+    <?php echo $rows['rating_total'];?>
+    <?php echo $rows['rating_count'];?></p>
+    <?php echo "<br/>"; ?>
+	<?php } ?>
 
 <?php include('footer.php'); ?>
