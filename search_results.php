@@ -34,13 +34,13 @@ if($tag!=""){
 print ".";
 print "<br />";
 
-$db = mysql_connect("studentdb.gl.umbc.edu","katp1","katp1");
+$db = mysql_connect("studentdb.gl.umbc.edu","mduran2","mduran2");
 
 if(!$db){
 	exit("Error - could not connect to MySQL");
 }
 
-$er = mysql_select_db("katp1");
+$er = mysql_select_db("mduran2");
 
 if(!$er){
 	exit("Error - could not select db_user database");
@@ -57,9 +57,10 @@ $select_query = "SELECT comic_name, img_url FROM db_comic WHERE (genre='$genre' 
 				OR MONTH(upload_date)='$month' OR YEAR(upload_date)='$year' OR tag='$tag'";
 	
 $result = mysql_query($select_query);
+
 if(!mysql_query($query,$db)){
-			 die('Insert Row Failed!' . mysql_error());
-			}
+			 print "No results found.";
+}else{
 
 while($row = mysql_fetch_array($result)){
    	print ("$row[comic_name]");
@@ -69,6 +70,7 @@ while($row = mysql_fetch_array($result)){
    	?> <img src =<?php echo $comic_file_path ?>>
    	<?php
    	print("<br />");
+}
 }
 
 include('footer.php');
