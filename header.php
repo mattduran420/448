@@ -5,7 +5,6 @@
 	if(!isset($_SESSION['login']) && basename($_SERVER['PHP_SELF']) != "login.php" && basename($_SERVER['PHP_SELF']) != "register.php"){
 		header('Location: login.php');
 	}
-
 ?>
 <html>
 	<head>
@@ -27,7 +26,7 @@
 					<li><a href="register.php">Sign Up</a></li>
 					<?php } ?>
 					<?php if(isset($_SESSION['login'])){ ?>
-					<li><a href="collaborate.php">View/Edit Drafts</a></li>
+					<li><a href="view_drafts.php">View/Edit Drafts</a></li>
 					<li><a href="upload_comic.php">Upload Comic</a></li>
 					<li><a href="search.php">Search Comics</a></li>
 					<li id="logout"><a href="logout.php">Log Out</a></li>
@@ -36,7 +35,7 @@
 			</div>
 			<div id="logo">
 				<a href="<?php getcwd(); ?>">
-					<img src="assets/img/logo.png" height="150px" alt="Musicians Ink logo">
+					<img src="assets/img/logo.png" height="150px" alt="Musician's Ink logo">
 				</a>
 			</div>
 
