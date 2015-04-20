@@ -25,7 +25,9 @@
 	
 	if ($rows == 1) 
 	{
-		$_SESSION['login']=$username; 
+		$_SESSION['login']=true;
+		$_SESSION['userID'] = 1;
+		$_SESSION['username'] = "sample username";
 		header("location: home.php"); 
 	} else 
 	{
