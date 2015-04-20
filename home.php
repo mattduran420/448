@@ -21,7 +21,7 @@
 		die(mysql_error());
 	}
 	while ($rows = mysql_fetch_assoc($query)) {
-    echo '<img src="images.php?id='.$rows['comic_id'].'">'; 
+    echo '<img src="images.php?id='.$rows['comic_id'].'"><br/>'; 
     echo $rows['comic_name'];
     echo $rows['genre'];
     echo $rows['tag'];

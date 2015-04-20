@@ -5,20 +5,20 @@ DROP TABLE IF EXISTS db_user;
 
 CREATE TABLE db_user(
     user_id INTEGER NOT NULL AUTO_INCREMENT, 
-    firstname VARCHAR(40), 
-    lastname VARCHAR(40), 
-    username VARCHAR(40), 
-    user_password VARCHAR(10),
+    firstname VARCHAR(100), 
+    lastname VARCHAR(100), 
+    username VARCHAR(100), 
+    user_password VARCHAR(100),
     PRIMARY KEY (user_id),
-    email VARCHAR(40));
+    email VARCHAR(100));
 
 CREATE TABLE db_comic(
     comic_id INTEGER AUTO_INCREMENT NOT NULL, 
-    comic_name VARCHAR(40),
-    genre VARCHAR(40), 
-    tag VARCHAR(40),
+    comic_name VARCHAR(100),
+    genre VARCHAR(100), 
+    tag VARCHAR(100),
     upload_date DATE,
-    image_payload BLOB NOT NULL,
+    image_payload LONGBLOB NOT NULL,
     user_id INTEGER,
     comic_status INTEGER,
     rating_total INTEGER, 
@@ -33,7 +33,7 @@ CREATE TABLE db_comment(
     PRIMARY KEY (comment_id),
     foreign key(user_id) references db_user(user_id),
     foreign key(comic_id) references db_comic(comic_id),
-    comment_body VARCHAR(1000), 
+    comment_body VARCHAR(100), 
     timestamp TIMESTAMP);
 
 CREATE TABLE db_note(
