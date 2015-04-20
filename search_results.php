@@ -48,15 +48,73 @@ if(!$er){
 	exit("Error - could not select db_user database");
 }
 
-$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE (genre='$genre' AND MONTH(upload_date)='$month' 
-				AND YEAR(upload_date)='$year' AND tag='$tag') OR (genre='$genre' AND MONTH(upload_date)='$month' 
-				AND YEAR(upload_date)='$year') OR (MONTH(upload_date)='$month' AND YEAR(upload_date)='$year' 
-				AND tag='$tag') OR (YEAR(upload_date)='$year' AND tag='$tag' AND genre='$genre') OR (tag='$tag' 
-				AND genre='$genre' AND MONTH(upload_date)='$month') OR (genre='$genre' AND MONTH(upload_date)='$month')
-				OR (genre='$genre' AND YEAR(upload_date)='$year') OR (genre='$genre' AND tag='$tag') 
-				OR (MONTH(upload_date)='$month' AND YEAR(upload_date)='$year') OR (MONTH(upload_date)='$month' 
-				AND tag='$tag') OR (YEAR(upload_date)='$year' AND tag='$tag') OR genre='$genre' 
-				OR MONTH(upload_date)='$month' OR YEAR(upload_date)='$year' OR tag='$tag'";
+if($genre==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE MONTH(upload_date)='$month' 
+					AND YEAR(upload_date)='$year' AND tag='$tag'";
+}
+
+if($month==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE YEAR(upload_date)='$year' 
+					AND tag='$tag' AND genre='$genre'";
+}
+
+if($year==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE tag='$tag' AND genre='$genre' 
+					AND MONTH(upload_date)='$month'";
+}
+
+if($tag==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE genre='$genre' 
+					AND MONTH(upload_date)='$month' AND YEAR(upload_date)='$year'";
+}
+
+if($genre=="" && $month==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE MONTH(upload_date)='$month' AND genre='$genre'";
+}
+
+if($genre=="" && $year==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE MONTH(upload_date)='$month' 
+					AND tag='$tag'";
+}
+
+if($genre=="" && $tag==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE MONTH(upload_date)='$month' 
+					AND YEAR(upload_date)='$year'";
+}
+
+if($month=="" && $year==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE genre='$genre' AND tag='$tag'";
+}
+
+if($month=="" && $tag==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE genre='$genre' AND YEAR(upload_date)='$year'";
+}
+
+if($year=="" && $tag==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE YEAR(upload_date)='$year' 
+					AND tag='$tag'";
+}
+
+if($genre=="" && $month=="" && $year==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE tag='$tag'";
+}
+
+if($genre=="" && $year=="" && $tag==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE MONTH(upload_date)='$month'";
+}
+
+if($genre=="" && $month=="" && $tag==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE YEAR(upload_date)='$year'";
+}
+
+if($month=="" && $year=="" && $tag==""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE genre='$genre'";
+}
+
+if($genre!="" && $month!="" && $year!="" && $tag!=""){
+	$select_query = "SELECT comic_name, comic_id FROM db_comic WHERE (genre='$genre' AND MONTH(upload_date)='$month' 
+					AND YEAR(upload_date)='$year' AND tag='$tag')";
+}
 	
 $result = mysql_query($select_query);
 
