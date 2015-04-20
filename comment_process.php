@@ -1,6 +1,11 @@
-<!--Seri Ngaothong -->
+
 <?php
+//Seri Ngaothong
+
 	$comment_body = $_POST['comment_area'];
+	$user_id = 1;
+	$comic_id = $_POST['comic_id'];
+	$timestamp = '2015-04-21 22:34:52';
 
 	$db = mysql_connect("studentdb.gl.umbc.edu","mduran2","mduran2");
 		if(!$db) exit("Error - could not connect to MySQL");
@@ -9,17 +14,7 @@
 		if(!$er) exit("Error - could not select db_user database");
 	
 	$store_comment = "INSERT INTO db_comment(user_id, comic_id, comment_body, timestamp) 
-				VALUES('$comic_name','$genre','$comment_body','$date')";
-
-	$get_comment = "SELECT * FROM db_comment";
-	while($rows = mysql_fetch_array($get_comment)){
-				$user_id = $rows['user_id'];
-				$comic = $rows['comic_id'];
-				$comment = $rows['comment_body'];
-				$timestamp = $row['timestamp'];
-
-				echo $user_id . '<br />' . $comic . '<br />' . $comment . '<br />'.$timestamp;
-			}
-
-
+				VALUES('$user_id','$comic_id','$comment_body','$timestamp')";
+	mysql_query($store_comment);
+	header("location: comment_comic.php?comic_id=".$comic_id);	
 ?>

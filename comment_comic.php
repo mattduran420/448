@@ -1,3 +1,4 @@
+<!--Seri Ngaothong -->
 	<?php
 		include('header.php');
 	
@@ -30,13 +31,29 @@
 
 
 		<img src = "http://userpages.umbc.edu/~mduran2/is448/project/images.php?id=<?php echo $comic; ?>">
-		<form>
-			<textarea id = "comment_area">
+		<form action = "comment_process.php" method = "post">
+			<textarea name = "comment_area">
 				
 			</textarea>
+			<input type="hidden" name="comic_id" value="<?php  echo $comic; ?>" />
 			<input type="submit" name="submit" value="Submit" />
 			<input type="reset" name="reset" value="Clear" />
 		</form>
+
 		<?php
+
+		$get_comment = "SELECT * FROM db_comment WHERE comic_id = $comic";
+		$query = mysql_query($get_comment);
+
+			while($rows = mysql_fetch_array($query)){
+				$user_id = $rows['user_id'];
+				$comic = $rows['comic_id'];
+				$comment = $rows['comment_body'];
+				$timestamp = $row['timestamp'];
+
+				echo $user_id . '<br />' . $comic . '<br />' . $comment . '<br />'.$timestamp;
+			}
+
+
 		include('footer.php');
 	?>
