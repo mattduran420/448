@@ -57,10 +57,9 @@ $select_query = "SELECT comic_name, img_url FROM db_comic WHERE (genre='$genre' 
 				OR MONTH(upload_date)='$month' OR YEAR(upload_date)='$year' OR tag='$tag'";
 	
 $result = mysql_query($select_query);
-
 if(!mysql_query($query,$db)){
-			 print "No results found.";
-}else{
+			 die('Insert Row Failed!' . mysql_error());
+			}
 
 while($row = mysql_fetch_array($result)){
    	print ("$row[comic_name]");
@@ -70,7 +69,6 @@ while($row = mysql_fetch_array($result)){
    	?> <img src =<?php echo $comic_file_path ?>>
    	<?php
    	print("<br />");
-}
 }
 
 include('footer.php');
