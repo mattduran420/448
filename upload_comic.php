@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 ?>
-	
+	<div id = "upload-form">
 	<form action="process_upload.php" method="post" enctype="multipart/form-data">
 		Genre: <select name = "genre">
 			<option disabled selected></option>
@@ -54,8 +54,10 @@ include('header.php');
 		Your Comic: <input type="file" name="photo" size="25" /><br /><br />
 		
 
-	<input type="submit" name="submit" value="Submit" />
-</form>
+		<input type="submit" name="submit" value="Submit" />
+	</form>
+	</div>
+
 
 <?php
 include('footer.php');

@@ -63,33 +63,7 @@
 						<div id ="comic_block">
 							<img id="comic_image" src="assets/img/sample_comic.png" width="150px">
 							
-			  				<form name = "comment_comic" action = "usecase3.php">
-			  				<input type = "button" id = "button" value="Comment" />
-			  				
-		  	  				<div id = "starRating">
-								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('1')">
-								<input type = "hidden" name "choice" id = "1" value = "1">
-								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('2')">
-								<input type = "hidden" name "choice" id = "2" value = "2">
-								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('3')">
-								<input type = "hidden" name "choice" id = "3" value = "3">
-								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('4')">
-								<input type = "hidden" name "choice" id = "4" value = "4">
-								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('5')">
-								<input type = "hidden" name "choice" id = "5" value = "5">
-							</div>
-  			  		<br /><br />
-  			 			  						
-			  			</form>
-		   			
-						</div>
-					<!-- EDIT HERE -->
-					</div>
-					<div id = "comic_display">
-						<div id ="comic_block">
-							<img id="comic_image" src="assets/img/sample_comic.png" width="150px">
-							
-			  				<form name = "comment_comic" action = "usecase3.php">
+			  				<form name = "comment_comic" action = "comment_comic.php">
 			  				<input type = "button" id = "button" value="Comment" />
 			  				
 		  	  				<div id = "starRating">
@@ -105,7 +79,7 @@
 								<input type = "hidden" name "choice" id = "5" value = "5">
 							</div>
 							<div id = "comment_area">
-								<textarea></textarea>
+								<textarea id = "comment_area"></textarea>
 							</div>
   			  		<br /><br />
   			 			  						
@@ -118,7 +92,7 @@
 						<div id ="comic_block">
 							<img id="comic_image" src="assets/img/sample_comic.png" width="150px">
 							
-			  				<form name = "comment_comic" action = "usecase3.php">
+			  				<form name = "comment_comic" action = "comment_comic.php">
 			  				<input type = "button" id = "button" value="Comment" />
 			  				
 		  	  				<div id = "starRating">
@@ -132,6 +106,38 @@
 								<input type = "hidden" name "choice" id = "4" value = "4">
 								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('5')">
 								<input type = "hidden" name "choice" id = "5" value = "5">
+							</div>
+							<div id = "comment_area">
+								<textarea id = "comment_area"></textarea>
+							</div>
+  			  		<br /><br />
+  			 			  						
+			  			</form>
+		   			
+						</div>
+					<!-- EDIT HERE -->
+					</div>
+					<div id = "comic_display">
+						<div id ="comic_block">
+							<img id="comic_image" src="assets/img/sample_comic.png" width="150px">
+							
+			  				<form name = "comment_comic" action = "comment_comic.php">
+			  				<input type = "button" id = "button" value="Comment" />
+			  				
+		  	  				<div id = "starRating">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('1')">
+								<input type = "hidden" name "choice" id = "1" value = "1">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('2')">
+								<input type = "hidden" name "choice" id = "2" value = "2">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('3')">
+								<input type = "hidden" name "choice" id = "3" value = "3">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('4')">
+								<input type = "hidden" name "choice" id = "4" value = "4">
+								<input type = "image" id = "star" src = "assets/img/white_star.gif" alt = "button" value "1" onclick = "starRating('5')">
+								<input type = "hidden" name "choice" id = "5" value = "5">
+							</div>
+							<div id = "comment_area">
+								<textarea id = "comment_area"></textarea>
 							</div>
   			  		<br /><br />
   			 			  						

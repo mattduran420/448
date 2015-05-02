@@ -1,3 +1,4 @@
+@import url("comment_comic.css");
 html{
 	position: relative;
 	min-height:100%;
@@ -20,6 +21,8 @@ body{
 #header-nav{
 	text-transform: uppercase;
 	display : inline-block;
+	width: auto;
+
 }
 
 #header-nav a{
@@ -185,79 +188,8 @@ body{
 	border-radius: 10px;
 	display: none;
 }
+
 /* END USE CASE 2 RELATED CSS */
-#comment-box{
-	/*display: none;*/
-}
 
-#comment_area{
-	width : 100%;
-	height : 20%;
-}
-
-#comic_image{
-	width : 60%;
-	height : 80px;
-	
-}
-
-#comic_display{
-	position: relative;
-	display: inline-block;
-	padding: 20px;
-	border: 2px solid #93e;
-	margin-top: 2%;
-
-}
-
-#starRating{
-	display: inline;
-	margin-left: 3%;
-
-}
-
-#star{
-	margin-top: 3%;
-	width : 20px;
-	height : 20px;
-	display : inline;
-}
-
-ul{
-	list-style-type: none;
-
-}
-
-#comic_block li{
-	display: inline;
-}
-
-#star li:hover{
-	/*background-image: src('assets/img/yellow_star.png');*/
-	color: yellow;
-}
-
-#button{
-	margin-left: 3%;
-
-
-}
-#button:hover{
-	background-color: #38d;
-}
-
-#upload_comic_box{
-
-	border: 2px solid #38d;
-	width: 100%;
-	height: 20%;
-	margin: 2%;
-	background-color: #469;
-
-}
-
-#upload_comic{
-	padding: 5%;
-}
 
 
