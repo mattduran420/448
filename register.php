@@ -5,7 +5,7 @@ include('header.php');
 <!-- Kat Pfeiffer -->
 
     <p>
-	<form name ="signup" method="post" action = "create_account.php" onsubmit="return checkRegistration();">
+	<form name ="signup" id="signup" method="post" onsubmit="event.preventDefault(); return checkRegistration();">
 	
 	<label>
 	  First Name: <input type = "text" name = "firstname" size = "30" maxlength="30" />
@@ -37,10 +37,44 @@ include('header.php');
 	<br />
 	<br />
 	
-	<input type = "submit" value="Submit" />
+	<input type = "submit" value="Submit" onclick="createAccount()"/>
 	</form>
 	</p>
 
+<script>
+function checkName(){
+$.ajax({
+  method: "POST",
+  url: "create_account.php",
+  data: {username: "username"}
+})
+  .done(function( msg ) {
+    if (msg==0)
+    {alert("username already taken");}
+    else
+    {alert("username available");}
+  });
+}
+
+function createAccount(){
+var data =  $("#signup").serializeArray();
+console.log(data);
+$.ajax({
+  method: "POST",
+  url: "create_account.php",
+  data: $("#signup").serialize()
+})
+  .done(function( msg ) {
+  	if(msg==2){
+  	alert("Account Created, Redirecting to Login");
+  	window.location.replace("login.php");
+  	}
+  	else{alert("Username Already Taken");} 
+  	
+  });
+}
+</script>
+  
 <?php
 include('footer.php');
 ?>
