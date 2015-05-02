@@ -11,4 +11,5 @@
 		</div>
 		<!-- END FOOTER -->
 	</body>
+	<script type="text/javascript" src="assets/js/main.js"></script>
 </html>
