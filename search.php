@@ -5,7 +5,7 @@ include('header.php');
 <!-- Author: Daniel Kershner -->
 
 	<h1> Search Comics </h1>
-    
+
     <p>
 	
 	<form name ="search" action = "search_results.php" method="POST">
@@ -98,7 +98,7 @@ include('header.php');
 		<br />
 		<br />
 
-		<input type = "submit" value="Submit" onclick="return checkSearch()"/>
+		<input type = "submit" value="Submit" onmouseover="mouseOver()" onmouseout="mouseOff()" onclick="return checkSearch()"/>
 		<input type = "reset" value="Reset"/>
 
 	</form>
