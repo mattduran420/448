@@ -20,7 +20,7 @@ include('header.php');
 	<br />
 	
 	<label>
-	  Username: <input type = "text" name = "username" size = "30" maxlength = "30" />
+	  Username: <input type = "text" name = "username" id = "uname" size = "30" maxlength = "30" />
 	</label>
 	<br />
 	<br />
