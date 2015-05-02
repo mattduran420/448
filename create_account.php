@@ -23,10 +23,16 @@ include('header.php');
 	{
 		exit("Error - could not select db_user database");
 	}
-	
+	$query = "select * from db_user where username='$_POST['username']';";
+	$result = mysql_query($query);
+	if (!$result){
 	$sql_insert = "INSERT INTO db_user(firstname, lastname, email, username, user_password) 
 					VALUES ('$firstname', '$lastname', '$email', '$username', '$user_password')";
 	mysql_query($sql_insert);	
+	}
+	else {
+	
+	}
 ?>
 
 <?php
