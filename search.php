@@ -98,7 +98,7 @@ include('header.php');
 		<br />
 		<br />
 
-		<input type = "submit" value="Submit" onclick="return checkForm();"/>
+		<input type = "submit" value="Submit" onclick="return checkForm()"/>
 		<input type = "reset" value="Reset"/>
 
 	</form>
