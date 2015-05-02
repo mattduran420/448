@@ -1,4 +1,6 @@
-<?	
+<?
+require('library/json.php');
+$json = new Services_JSON();
 //function to connect to DB
 //returns db object
 function connectToDB($account = "mduran2"){
@@ -25,5 +27,16 @@ function getRootPath(){
 	return "root path";
 }
 
+//wrapper around json encode so that peeps dont have to use
+//the json object
+function json_encode($value){
+	return $json->encode($value);
+}
+
+//wrapper around json decode so that peeps dont have to use
+//the json object
+function json_decode($value){
+	return $json->decode($value);
+}
 
 ?>

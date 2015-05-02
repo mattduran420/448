@@ -10,7 +10,7 @@
 		die(mysql_error());
 	}
 	while ($rows = mysql_fetch_assoc($query)) {?>
-	<div class="">
+	<div class="comicContainer">
 	    <?php echo '<img src="images.php?id='.$rows['comic_id'].'"><br/>'; ?>
 	    <h3><?php echo $rows['comic_name']; ?></h3>
 	    <p> Genre:&nbsp; <?php echo $rows['genre'];?>
@@ -19,7 +19,6 @@
 	    Status:&nbsp; <?php echo $rows['comic_status'];?>
 	    Rating Total:&nbsp; <?php echo $rows['rating_total'];?>
 	    Rating Count:&nbsp; <?php echo $rows['rating_count'];?></p>
-	    <?php echo "<br/>"; ?>
     </div>
 	<?php } ?>
 
