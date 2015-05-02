@@ -3,7 +3,7 @@ include('header.php');
 ?>
 
 <!-- Author: Daniel Kershner -->
-<script type="text/javascript" src="/assets/js/main.js"></script>
+
 	<h1> Search Comics </h1>
     
     <p>
