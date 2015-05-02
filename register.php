@@ -20,7 +20,8 @@ include('header.php');
 	<br />
 	
 	<label>
-	  Username: <input type = "text" name = "username" id = "uname" size = "30" maxlength = "30" />
+	  Username: <input type = "text" name = "username" id = "uname" size = "30" maxlength = "30" 
+	  			onmouseover="changeText()" />
 	</label>
 	<br />
 	<br />

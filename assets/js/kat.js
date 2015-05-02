@@ -44,3 +44,11 @@ function checkRegistration() {
 		return false;
 	}
 	}
+	
+function changeText(){
+document.body.style.color = "red";
+}
+
+function displayMessage(){
+document.print("enter your username");
+}

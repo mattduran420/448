@@ -8,7 +8,7 @@ include('header.php');
 	
 	<label>
 	  Username: <input type = "text" name = "username" size ="30" maxlength="30" 
-	  			placeholder="example_name" required/>
+	  			placeholder="example_name" onmouseover="displayMessage()" required/>
 	</label>
 	<br />
 	<br />
