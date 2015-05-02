@@ -3,7 +3,6 @@ include('header.php');
 ?>
 
 <!-- Author: Daniel Kershner -->
-	<script type="text/javascript" src="/assets/js/main.js"></script>
 	<h1> Search Comics </h1>
     
     <p>
@@ -98,7 +97,7 @@ include('header.php');
 		<br />
 		<br />
 
-		<input type = "submit" value="Submit" onclick="return checkForm()"/>
+		<input type = "submit" value="Submit" onclick="return checkSearch()"/>
 		<input type = "reset" value="Reset"/>
 
 	</form>
