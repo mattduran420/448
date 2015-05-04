@@ -21,7 +21,7 @@ include('header.php');
 	
 	<label>
 	  Username: <input type = "text" name = "username" id = "uname" size = "30" maxlength = "30" 
-	  			onmouseover="changeText()" />
+	  			onmouseover="changeText()" onmouseout="changeTextBack()"/>
 	</label>
 	<br />
 	<br />

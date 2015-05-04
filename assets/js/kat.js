@@ -49,6 +49,10 @@ function changeText(){
 document.body.style.color = "red";
 }
 
+function changeTextBack(){
+document.body.style.color = "black";
+}
+
 function displayMessage(){
 alert("enter your username");
 }
