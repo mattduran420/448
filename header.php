@@ -12,7 +12,7 @@
 		<!-- BEGIN ASSET INCLUDES -->
 		<link rel="stylesheet" type="text/css" href="assets/styles/base.css">
 		<script type="text/javascript" src="assets/js/jquery.js"></script>
-		<script type="text/javascript" src="assets/js/upload_comic.js"></script>
+		<!--<script type="text/javascript" src="assets/js/upload_comic.js"></script>-->
 		<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
 		<!-- END ASSET INCLUDES -->
 	</head>

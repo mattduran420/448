@@ -5,13 +5,13 @@ include('header.php');
 <!-- Author: Daniel Kershner -->
 
 	<h1> Search Comics </h1>
-
+    
     <p>
 	
 	<form name ="search" action = "search_results.php" method="POST">
 
 		<label>
-		  	Genre: <select name="genre" id="genre">
+		  	Genre: <select name="genre">
 		  	<option disabled selected></option>
 			<option>Music</option>
 			<option>Games</option>
@@ -33,7 +33,7 @@ include('header.php');
 		<br />
 		
 		<label>
-		  	Date: Month <select name="month" id="month">
+		  	Date: Month <select name="month">
 		  	<option disabled selected></option>
 		  	<option value="01">January</option>
 		  	<option value="02">February</option>
@@ -51,7 +51,7 @@ include('header.php');
 		</label>
 
 		<label>
-			Year <select name="year" id="year">
+			Year <select name="year">
 			<option disabled selected></option>
 			<option>2005</option>
 			<option>2006</option>
@@ -71,7 +71,7 @@ include('header.php');
 		<br />
 
 		<label>
-		  	Tag: <select name="tag" id="tag">
+		  	Tag: <select name="tag">
 		  	<option disabled selected></option>
 		  	<option>Funny</option>
 		  	<option>Stupid</option>
@@ -98,7 +98,7 @@ include('header.php');
 		<br />
 		<br />
 
-		<input type = "submit" value="Submit" onmouseover="mouseOver()" onmouseout="mouseOff()" onclick="return checkSearch()"/>
+		<input type = "submit" value="Submit"/>
 		<input type = "reset" value="Reset"/>
 
 	</form>
