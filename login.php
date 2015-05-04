@@ -19,7 +19,11 @@ include('header.php');
 	</label>
 	<br />
 	<?php if(isset($_GET['error'])) { ?>
-	<p><span style="color:red;">ERROR - incorrect login information</span></p>
+	<p><span style="color:red;" onmouseover=
+    "show_image('assets/img/logo.png', 
+                 530, 
+                 530, 
+                 'You Are Wrong');">ERROR - incorrect login information</span></p>
 	<?php } ?>
 	
 	<input type = "submit" value="Login" />

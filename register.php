@@ -8,13 +8,15 @@ include('header.php');
 	<form name ="signup" id="signup" method="post" onsubmit="event.preventDefault(); return checkRegistration();">
 	
 	<label>
-	  First Name: <input type = "text" name = "firstname" size = "30" maxlength="30" />
+	  First Name: <input type = "text" name = "firstname" size = "30" maxlength="30" 
+	  onmouseover="changeText()" onmouseout="changeTextBack()"/>
 	</label>
 	<br />
 	<br />
 	
 	<label>
-	  Last Name: <input type = "text" name = "lastname" size = "30" maxlength="30" />
+	  Last Name: <input type = "text" name = "lastname" size = "30" maxlength="30"
+	  onmouseover="changeText()" onmouseout="changeTextBack()" />
 	</label>
 	<br />
 	<br />
@@ -27,13 +29,15 @@ include('header.php');
 	<br />
 	
 	<label>
-	  Password: <input type = "password" name = "user_password" id="upass" size = "30" maxlength = "30" />
+	  Password: <input type = "password" name = "user_password" id="upass" size = "30" maxlength = "30"
+	  onmouseover="changeText()" onmouseout="changeTextBack()" />
 	</label>
 	<br />
 	<br />
 	
 	<label>
-	  Email: <input type = "text" name = "email" id="email" size = "30" maxlength="30" />
+	  Email: <input type = "text" name = "email" id="email" size = "30" maxlength="30" 
+	  onmouseover="changeText()" onmouseout="changeTextBack()"/>
 	</label>
 	<br />
 	<br />
