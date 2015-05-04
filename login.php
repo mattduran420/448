@@ -20,7 +20,7 @@ include('header.php');
 	<br />
 	<?php if(isset($_GET['error'])) { ?>
 	<p><span style="color:red;" onmouseover=
-    "show_image('assets/img/logo.png', 
+    "show_image('assets/img/crying.png', 
                  530, 
                  530, 
                  'You Are Wrong');">ERROR - incorrect login information</span></p>
