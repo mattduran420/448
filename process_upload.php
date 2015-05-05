@@ -1,4 +1,5 @@
 <?php
+include('functions.php');
 $myFile = $_FILES['photo']['name'];
 $tempFile = $_FILES['photo']['tmp_name'];
 $comicSize = $_FILES['photo']['size'];
@@ -37,7 +38,8 @@ if($myFile)
 			if(!mysql_query($query,$db)){
 			 die('Insert Row Failed!' . mysql_error());
 			}else{
-			header("location: comment_comic.php?comic_id=".mysql_insert_id($db));	
+				
+				header("location: comment_comic.php?comic_id=".mysql_insert_id($db));	
 			
 		}
 
