@@ -1,40 +1,14 @@
 <?php
 
-include('header.php');
+require('functions.php');
 
 //Author: Daniel Kershner
 
-$genre = $_POST['genre'];
-$month = $_POST['month'];
-$year = $_POST['year'];
-$tag = $_POST['tag'];
-
-?>
-
-<h1>Search Results</h1>
-
-<?php
-
-print "Search results for comics";
-
-if($genre!=""){
-	print " with " . $genre . " genre";
-}
-
-if($month!=""){
-	print " published in the " . $month . "th month";
-}
-
-if($year!=""){
-	print " in the year " . $year;
-}
-
-if($tag!=""){
-	print " with tag " . $tag;
-}
-
-print ".";
-print "<br /><br />";
+$genre=$_GET["genre"];
+$month=$_GET["month"];
+$year=$_GET["year"];
+$tag=$_GET["tag"];
+$num_rows = 0;
 
 $db = mysql_connect("studentdb.gl.umbc.edu","mduran2","mduran2");
 
@@ -124,16 +98,11 @@ if(!mysql_query($select_query,$db)){
 
 if(mysql_num_rows($result)>0){
 	while($row = mysql_fetch_array($result)){
-		print ("$row[comic_name]");
-	   	print ("<br />");
-	   	$comic_id = $row['comic_id'];
-	   	?><img src ="images.php?id=<?php echo $comic_id ?>"/>
-	   	<?php print("<br /><br />");
+		$num_rows++;
 	}
+	echo $num_rows;
 }else{ 
-	print "No results found.";
+	echo 0;
 }
-
-include('footer.php');
 
 ?>

@@ -23,3 +23,20 @@ function mouseOver(){
 function mouseOff(){
 	document.body.style.background = "#ddd";
 }
+
+function resultTotal(){
+	$genre = $("genre").value;
+	$month = $("month").value;
+	$year = $("year").value;
+	$tag = $("tag").value;
+	new Ajax.Request( "count_search_results.php", 
+	{ 
+		method: "get", 
+		parameters: {genre:$genre, month:$month, year:$year, tag:$tag},
+		onSuccess: displayResult
+	} );
+}
+
+function displayResult(ajax){
+	$("total").value=ajax.responseText;
+}
