@@ -108,7 +108,7 @@ include('header.php');
 		<br />
 		<br />
 
-		<input type = "submit" value="View Comics"/>
+		<input type = "submit" value="View Comics" onmouseover="mouseOver()" onmouseout="mouseOff()"/>
 		<input type = "reset" value="Reset"/>
 
 	</form>
