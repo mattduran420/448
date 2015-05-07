@@ -1,6 +1,6 @@
 <?php
+	session_start();
 	//Matt Duran
-	$user_id = 1;
 	$date = date('Y-m-d');
 
 	$db = mysql_connect("studentdb.gl.umbc.edu","mduran2","mduran2");
@@ -10,7 +10,8 @@
 		if(!$er) exit("Error - could not select db_user database");
 	
 	$store_note = "INSERT INTO db_note(noteContent, note_time, xposition, yposition, user_id, comic_id) 
-				VALUES('".$_POST['note']."','$date',5,5,1,".$_POST['comic_id'].")";
+				VALUES('".$_POST['note']."','$date',".$_POST['x'].",".$_POST['y'].",".$_SESSION['userID'].",".$_POST['comic_id'].")";
+	var_dump($store_note);
 	$result = mysql_query($store_note);
 	if(!$result){
 		die("error:" . mysql_error());

@@ -45,13 +45,6 @@ $db = connectToDB();
 		</div>
 	</div>
 </div>
-<!-- example add note form with no javascript -->
-<form method="post" id="note-content" onsubmit="event.preventDefault(); ajaxNote();">
-	<input type="hidden" name="comic_id" value="<?php echo $_GET['id']; ?>"><br/>
-	<textarea name="note" id="noteBody"></textarea><br/>
-	<input type="submit" value="Leave Note!">
-</form>
-<br/>
 
 <!-- end example -->
 <!-- BEGIN LISTED NOTES -->
@@ -77,12 +70,17 @@ $db = connectToDB();
 </div>
 <!-- end listed notes -->
 <script>
+
 $(document).ready(function() {
 	$('img').click(function(e) {
+		console.log("test");
 		var offset = $(this).offset();
-
 		var randID = Math.floor((Math.random() * 1000) + 1);
-		var container = "<div class=\"comic-note\" style=\"margin-top:" + (e.clientY - offset.top) + "px;margin-left:" + (e.clientX - offset.left) + "px;\"><a class=\"note-link\" href=\"javascript:void(0)\" onclick=\"toggleNote('note-" + randID + "');\">X</a><div class=\"note-body\" id=\"note-" + randID + "\"><p>Leave a Note</p><textarea rows=\"4\" cols=\"50\"></textarea><p><input type=\"submit\" value=\"add\"></p></div></div>";
+		var container = "<div class=\"comic-note\" style=\"margin-top:" + (e.clientY - offset.top) + "px;margin-left:" + (e.clientX - offset.left) + "px;\">";
+		container += "<a class=\"note-link\" href=\"javascript:void(0)\" onclick=\"toggleNote('note-" + randID + "');\">X</a>";
+		container += "<div class=\"note-body\" id=\"note-" + randID + "\"><p>Leave a Note</p><textarea id='" + randID + "' rows=\"4\" cols=\"50\"></textarea>";
+		container += "<p><input type=\"submit\" value=\"add\" onclick=\"ajaxNote(" + (e.clientY - offset.top)+","+(e.clientX - offset.left)+","+randID+")\">";
+		container += "</p></div></div>";
 		$('#note-container').append(container);
 		$('#note-'+randID).toggle();
 	});
@@ -91,16 +89,17 @@ $(document).ready(function() {
 
 var date = new Date();
 
-function ajaxNote(){
-	console.log($('#note-content').serialize());
-	if($("#noteBody").val()){
+function ajaxNote(x,y,id){
+	if($("#" + id).val()){
+		console.log("body!!!");
 		$.ajax({
 			method: "POST",
 			url: "process_note.php",
-			data: $("#note-content").serialize()
+			data: {note: $(('#'+id)).val(), x:x, y:y,comicID:12}
 		})
 		.success(function( msg ) {
-			appendNote();
+			console.log(msg);
+			appendNote($(('#'+id)).val());
 		})
 		.error(function(msg){
 			alert("Error: Note not inserted.");
@@ -112,10 +111,10 @@ function ajaxNote(){
 	return;
 }
 
-function appendNote(){
+function appendNote(note){
 	console.log("append note called");
 	var html = '<div class="comment-body">';
-	html += "<p>" + $("#noteBody").val() + "</p>";
+	html += "<p>" + note + "</p>";
 	html += "<p>" + date.toISOString().slice(0,10).replace(/-/g,"-") + "</p>";
 	html += "</div>";
 	$(html).insertBefore('.comment-body');

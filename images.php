@@ -20,4 +20,5 @@ $row = mysql_fetch_row($query);
 //print binary image text
 echo $row[0];
 mysql_close($db);
+exit();
 ?>
