@@ -5,7 +5,7 @@ include('header.php');
 <!-- Kat Pfeiffer -->
 
     <p>
-	<form name ="signup" id="signup" method="post" onsubmit="event.preventDefault(); return checkRegistration();">
+	<form name ="signup" id="signup" method="post" onsubmit="event.preventDefault();">
 	
 	<label>
 	  First Name: <input type = "text" name = "firstname" size = "30" maxlength="30" 
