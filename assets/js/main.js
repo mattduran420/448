@@ -10,8 +10,10 @@ function checkSearch(){
 
 	if(genre=="" && month=="" && year=="" && tag==""){
 		alert("No search criteria entered. Please enter one or more search criteria and try again!");
+		document.body.style.color = "red";
 		return false;
 	}else{
+		document.body.style.color = "black";
 		return true;
 	}
 }
