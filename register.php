@@ -5,7 +5,7 @@ include('header.php');
 <!-- Kat Pfeiffer -->
 
     <p>
-	<form name ="signup" id="signup" method="post" onsubmit="event.preventDefault();">
+	<form name ="signup" id="signup" method="post" onsubmit="event.preventDefault(); return checkRegistration();">
 	
 	<label>
 	  First Name: <input type = "text" name = "firstname" size = "30" maxlength="30" 
@@ -30,7 +30,7 @@ include('header.php');
 	
 	<label>
 	  Password: <input type = "password" name = "user_password" id="upass" size = "30" maxlength = "30"
-	onmouseover="changeText()" onmouseout="changeTextBack()" />
+	  onmouseover="changeText()" onmouseout="changeTextBack()" />
 	</label>
 	<br />
 	<br />

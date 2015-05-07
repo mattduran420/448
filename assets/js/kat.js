@@ -32,6 +32,17 @@ function checkRegistration() {
 	
 	var uname = document.getElementById("uname").value;
 
+	var pattern3 = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+	var result3 = pattern3.test(uname);
+	
+	if (result3==false) 
+	{
+
+		alert("This username is already taken. Please choose a different one.");
+	document.getElementById("uname").select();
+    
+		return false;
+	}
 	}
 	
 function changeText(){
