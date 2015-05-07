@@ -36,20 +36,6 @@
     
 		return false;
 	}
-	
-	var $uname = document.getElementById("uname").value;
-
-	var $pattern3 = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-	var $result3 = $pattern3.test($uname);
-	
-	if ($result3==false) 
-	{
-
-		alert("This username is already taken. Please choose a different one.");
-	document.getElementById("uname").select();
-    
-		return false;
-	}
 
 	if(!$db)
 	{
@@ -72,7 +58,7 @@
 		}
 	}
 	
-	if($result && $result2 && $result3){
+	if($result && $result2){
 		$query2 = "select * from db_user where username='".$_POST['username']."'";
 		$result2 = mysql_query($query2);
 		if (mysql_num_rows($result2)==0){
