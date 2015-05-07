@@ -76,7 +76,7 @@
 		}
 	}
 	
-	if(result && result2 && result3){
+	if($result && $result2 && $result3){
 		$query2 = "select * from db_user where username='".$_POST['username']."'";
 		$result2 = mysql_query($query2);
 		if (mysql_num_rows($result2)==0){
