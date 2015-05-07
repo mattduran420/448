@@ -8,7 +8,7 @@
 	$user_password = $_POST['user_password'];
 	$email = $_POST['email'];
 	$db = mysql_connect("studentdb.gl.umbc.edu","mduran2","mduran2");
-	
+	?>
 	<script type="text/javascript"> 
 	function checkRegistration() {
   	var upass = document.getElementById("upass").value;
@@ -54,7 +54,7 @@
 	}
 	}
 	</script>
-
+	<?php
 	if(!$db)
 	{
 		exit("Error - could not connect to MySQL");
