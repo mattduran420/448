@@ -1,7 +1,7 @@
 #comic-wrapper{
 	margin : 2%;
 	padding: 2%;
-	background-color: white; 
+	background-color: #FDF9C9; 
 }
 
 #comic-display{
@@ -20,7 +20,7 @@
 	width : auto;
 	height : auto;
 	margin: 5px 10px 10px 10px;
-	background-color: #999900;
+	background-color: #777700;
 }
 
 textarea{
@@ -31,13 +31,43 @@ textarea{
 
 }
 
-#comment-display{
-	display : none;
+#comment-area-wrapper{
+	border: 1px solid black;
+	width : auto;
+	height : auto;
+	margin: 5px 10px 10px 10px;
+	
+}
+
+#user-post{
+	float: left;
+	width: 20px;
+	height: auto;
+	text-align: center;
+	margin: 5px 10px 5px 10px;
+	background-color: #99ccff;
+}
+
+#comment-post{
+	background-color: white;
+	width: 95%;
+	height: auto;
+	margin: 2% 0% 2% 4%;
+	padding: 5px 0px 5px 5px;
+}
+
+#date-post{
+	float: right;
+	width: auto;
+	height: auto;
+	margin: 5px 10px 5px 5px;
+	text-align: center;
+	background-color: #99ccff;
 }
 
 #star-rating{
 	display: inline;
-	padding-left: 5px;
+	margin-left: 4%;
 }
 
 .button1{
@@ -52,8 +82,26 @@ textarea{
 
 #submit-button{
 	float: right;
+	margin-right: 5%;
 }
 /* 
+  .rate_widget {
+    border:     1px solid #CCC;
+    overflow:   visible;
+    padding:    10px;
+    position:   relative;
+    width:      180px;
+    height:     32px;
+}
+.ratings_vote {
+    background: url(''assets/img/yellow_star.png'') no-repeat;
+ }
+
+.ratings_over {
+    background: url(''assets/img/yellow_star.png'') no-repeat;
+ }
+
+
 #comment-box{
 	
 }
@@ -101,7 +149,7 @@ ul{
 }
 
 #star li:hover{
-	/*background-image: src('assets/img/yellow_star.png');*/
+	
 	color: yellow;
 }
 

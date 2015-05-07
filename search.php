@@ -6,12 +6,15 @@ include('header.php');
 
 	<h1> Search Comics </h1>
 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
+	<script src = "main.js"></script>
+    
     <p>
 	
-	<form name ="search" action = "search_results.php" method="POST">
+	<form name ="search" action = "search_results.php" method="POST" onsubmit="return checkSearch()">
 
 		<label>
-		  	Genre: <select name="genre" id="genre">
+		  	Genre: <select name="genre" id="genre" onchange="resultTotal()">
 		  	<option disabled selected></option>
 			<option>Music</option>
 			<option>Games</option>
@@ -33,7 +36,7 @@ include('header.php');
 		<br />
 		
 		<label>
-		  	Date: Month <select name="month" id="month">
+		  	Date: Month <select name="month" id="month" onchange="resultTotal()">
 		  	<option disabled selected></option>
 		  	<option value="01">January</option>
 		  	<option value="02">February</option>
@@ -51,7 +54,7 @@ include('header.php');
 		</label>
 
 		<label>
-			Year <select name="year" id="year">
+			Year <select name="year" id="year" onchange="resultTotal()">
 			<option disabled selected></option>
 			<option>2005</option>
 			<option>2006</option>
@@ -71,7 +74,7 @@ include('header.php');
 		<br />
 
 		<label>
-		  	Tag: <select name="tag" id="tag">
+		  	Tag: <select name="tag" id="tag" onchange="resultTotal()">
 		  	<option disabled selected></option>
 		  	<option>Funny</option>
 		  	<option>Stupid</option>
@@ -98,7 +101,14 @@ include('header.php');
 		<br />
 		<br />
 
-		<input type = "submit" value="Submit" onmouseover="mouseOver()" onmouseout="mouseOff()" onclick="return checkSearch()"/>
+		<label>
+			There are <input type="text" id="total" disabled/> results for this search.
+		</label>
+
+		<br />
+		<br />
+
+		<input type = "submit" value="View Comics" onmouseover="mouseOver()" onmouseout="mouseOff()"/>
 		<input type = "reset" value="Reset"/>
 
 	</form>
@@ -107,7 +117,7 @@ include('header.php');
 
 	<br />
 	<br />
-		
+
 <?php
 include('footer.php');
 ?>
