@@ -65,9 +65,6 @@
 	{
 		exit("Error - could not select db_user database");
 	}
-	if(result=="true"){
-	if(result2=="true"){
-	if(result3=="true"){
 	if(!$firstname && !$lastname){
 		$query = "select * from db_user where username='".$_POST['username']."'";
 		$result = mysql_query($query);
@@ -78,6 +75,9 @@
 			echo json_encode(0);
 		}
 	}
+	if(result=="true"){
+	if(result2=="true"){
+	if(result3=="true"){
 	else{
 		$query2 = "select * from db_user where username='".$_POST['username']."'";
 		$result2 = mysql_query($query2);
