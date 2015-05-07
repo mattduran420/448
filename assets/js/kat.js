@@ -1,7 +1,7 @@
 //debug line
 console.log("kat.js included");
 
-function checkRegistration() {
+/*function checkRegistration() {
   var upass = document.getElementById("upass").value;
 
 	var pattern1 = /[0-9a-zA-Z]{6,}/;
@@ -43,7 +43,7 @@ function checkRegistration() {
     
 		return false;
 	}
-	}
+	}*/
 	
 function changeText(){
 document.body.style.color = "red";
