@@ -1,6 +1,8 @@
 //debug line
 console.log("main.js included");
 
+
+//Author: Daniel Kershner
 function checkSearch(){
 	console.log("checkSearch invoked");
 	var genre = document.getElementById("genre").value;
