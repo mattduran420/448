@@ -75,23 +75,27 @@
 			echo json_encode(0);
 		}
 	}
+	
 	if(result=="true"){
-	if(result2=="true"){
-	if(result3=="true"){
-	else{
-		$query2 = "select * from db_user where username='".$_POST['username']."'";
-		$result2 = mysql_query($query2);
-		if (mysql_num_rows($result2)==0){
-		$sql_insert = "INSERT INTO db_user(firstname, lastname, email, username, user_password) 
-					VALUES ('$firstname', '$lastname', '$email', '$username', '$user_password')";
-		mysql_query($sql_insert);
-		echo json_encode(2);
-		}
-		else {
+		if(result2=="true"){
+			if(result3=="true"){
+				$query2 = "select * from db_user where username='".$_POST['username']."'";
+				$result2 = mysql_query($query2);
+				if (mysql_num_rows($result2)==0){
+				$sql_insert = "INSERT INTO db_user(firstname, lastname, email, username, user_password) 
+							VALUES ('$firstname', '$lastname', '$email', '$username', '$user_password')";
+				mysql_query($sql_insert);
+				echo json_encode(2);
+				}else{
+					echo json_encode(20);
+				}
+			}else{
+				echo json_encode(20);
+			}
+		}else{
 			echo json_encode(20);
 		}
-		}
-		}
-		}
+	}else{
+		echo json_encode(20);
 	}
 ?>
