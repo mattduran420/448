@@ -1,11 +1,7 @@
 <?php include('header.php'); ?>
 <?php
 
-$db = mysql_connect("studentdb.gl.umbc.edu","mduran2","mduran2");
-if(!$db) exit("Error - could not connect to MySQL");
-
-$er = mysql_select_db("mduran2");
-if(!$er) exit("Error - could not select db_user database");
+$db = connectToDB();
 ?>
 <!-- EDIT HERE -->
 <div align="center">
@@ -38,10 +34,9 @@ if(!$er) exit("Error - could not select db_user database");
 	</div>
 </div>
 <!-- example add note form with no javascript -->
-<form action="process_note.php" method="post">
+<form method="post" id="note-content" onsubmit="event.preventDefault(); ajaxNote();">
 	<input type="hidden" name="comic_id" value="<?php echo $_GET['id']; ?>"><br/>
-	<textarea name="note">
-	</textarea><br/>
+	<textarea name="note" id="noteBody"></textarea><br/>
 	<input type="submit" value="Leave Note!">
 </form>
 <br/>
@@ -50,20 +45,57 @@ if(!$er) exit("Error - could not select db_user database");
 <!-- BEGIN LISTED NOTES -->
 <div class="something">
 <?php
-	$querystring  = "select * from db_note where comic_id = " . $_GET['id'];
+	$querystring  = "select * from db_note where comic_id = " . $_GET['id'] . " ORDER BY note_time DESC";
 	$results = mysql_query($querystring, $db);
 	if(!$results){
 		die("error:" . mysql_error());
 	}
 	else{
+		$i = 0;
 		while($row = mysql_fetch_array($results)){ ?>
 		<div class="comment-body">
+			<p><?php echo '<p>Comment by <a href="#">User</a> on ' .  $row['note_time'] . "</p>"; ?></p>
 			<p><?php echo "<p>" . $row['noteContent'] . "</p>"; ?></p>
-			<p><?php echo "<p>" . $row['note_time'] . "</p>"; ?></p>
 		</div>
-<?php }
-}
+	<?php
+		$i++;
+		}
+	}
 ?>
 </div>
 <!-- end listed notes -->
+<script>
+var date = new Date();
+console.log();
+function ajaxNote(){
+	console.log($('#note-content').serialize());
+	if($("#noteBody").val()){
+		$.ajax({
+			method: "POST",
+			url: "process_note.php",
+			data: $("#note-content").serialize()
+		})
+		.success(function( msg ) {
+			appendNote();
+		})
+		.error(function(msg){
+			alert("Error: Note not inserted.");
+		})
+	}
+	else{
+		alert("enter something pls");
+	}
+	return;
+}
+
+function appendNote(){
+	console.log("append note called");
+	var html = '<div class="comment-body">';
+	html += "<p>" + $("#noteBody").val() + "</p>";
+	html += "<p>" + date.toISOString().slice(0,10).replace(/-/g,"-") + "</p>";
+	html += "</div>";
+	$(html).insertBefore('.comment-body');
+	return;
+}
+</script>
 <?php include('footer.php'); ?>

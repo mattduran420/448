@@ -1,7 +1,7 @@
 <?php
 	//Matt Duran
 	$user_id = 1;
-	$date = '2015-04-21';
+	$date = date('Y-m-d');
 
 	$db = mysql_connect("studentdb.gl.umbc.edu","mduran2","mduran2");
 		if(!$db) exit("Error - could not connect to MySQL");

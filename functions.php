@@ -19,7 +19,6 @@ function connectToDB($account = "mduran2"){
 	return $db;
 }
 
-
 //function to return the root path of the website
 //use when wanting to link to home
 function getRootPath(){
