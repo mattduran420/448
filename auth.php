@@ -25,9 +25,10 @@
 	
 	if ($rows == 1) 
 	{
+		$row = mysql_fetch_row ( $query );
 		$_SESSION['login']=true;
-		$_SESSION['userID'] = 1;
-		$_SESSION['username'] = "sample username";
+		$_SESSION['userID'] = intval($row[0]);
+		$_SESSION['username'] = $row[3];
 		header("location: home.php"); 
 	} else 
 	{
