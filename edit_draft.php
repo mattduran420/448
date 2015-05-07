@@ -20,15 +20,27 @@ $db = connectToDB();
 	?>
 	<div id="comic-playground">
 		<div id="note-container">
-			<!-- <div class="comic-note" style="margin-top:88px;margin-left:55px;">
-				<a class="note-link" href="javascript:void(0)" onclick="toggleNote('note-1');">X</a>
-				<div class="note-body" id="note-1">
-					<p>Note added by <a href="#">Jake</a><br/>
-					1:58 AM 3/17/2015
-					</p>
-					<p>I have no friends!</p>
-				</div>
-			</div> -->
+			<?php
+				$querystring  = "select * from db_note where comic_id = " . $_GET['id'] . " ORDER BY note_time DESC";
+				$results = mysql_query($querystring, $db);
+				if(!$results){
+					die("error:" . mysql_error());
+				}
+				else{
+					$i = 0;
+					while($row = mysql_fetch_array($results)){ ?>
+					<div class="comic-note" style="margin-top:<?php echo "88"; ?>px;margin-left:<?php echo "55"; ?>px;">
+						<a class="note-link" href="javascript:void(0)" onclick="toggleNote('note-<?php echo $row['note_id']; ?>');">X</a>
+						<div class="note-body" id="note-<?php echo $row['note_id']; ?>">
+							<p><?php echo '<p>Comment by <a href="#">User</a> on ' .  $row['note_time'] . "</p>"; ?></p>
+							<p><?php echo "<p>" . $row['noteContent'] . "</p>"; ?></p>
+						</div>
+					</div>
+				<?php
+					$i++;
+					}
+				}
+			?>
 			<img id="comic" src="images.php?id=<?php echo $_GET['id']; ?>" class="comic-spotlight">
 		</div>
 	</div>
@@ -65,8 +77,20 @@ $db = connectToDB();
 </div>
 <!-- end listed notes -->
 <script>
+$(document).ready(function() {
+	$('img').click(function(e) {
+		var offset = $(this).offset();
+
+		var randID = Math.floor((Math.random() * 1000) + 1);
+		var container = "<div class=\"comic-note\" style=\"margin-top:" + (e.clientY - offset.top) + "px;margin-left:" + (e.clientX - offset.left) + "px;\"><a class=\"note-link\" href=\"javascript:void(0)\" onclick=\"toggleNote('note-" + randID + "');\">X</a><div class=\"note-body\" id=\"note-" + randID + "\"><p>Leave a Note</p><textarea rows=\"4\" cols=\"50\"></textarea><p><input type=\"submit\" value=\"add\"></p></div></div>";
+		$('#note-container').append(container);
+		$('#note-'+randID).toggle();
+	});
+});
+
+
 var date = new Date();
-console.log();
+
 function ajaxNote(){
 	console.log($('#note-content').serialize());
 	if($("#noteBody").val()){
@@ -97,5 +121,10 @@ function appendNote(){
 	$(html).insertBefore('.comment-body');
 	return;
 }
+
+
+function toggleNote(noteBodyID){
+		$("#" + noteBodyID).toggle();
+	}
 </script>
 <?php include('footer.php'); ?>
