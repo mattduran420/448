@@ -30,7 +30,7 @@ include('header.php');
 	
 	<label>
 	  Password: <input type = "password" name = "user_password" id="upass" size = "30" maxlength = "30"
-	  onmouseover="changeText()" onmouseout="changeTextBack()" />
+	onmouseover="changeText()" onmouseout="changeTextBack()" />
 	</label>
 	<br />
 	<br />
