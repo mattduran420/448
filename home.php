@@ -4,7 +4,7 @@
 <!-- Kat Pfeiffer -->
 <?php	
 	$db = connectToDB();
-	
+	var_dump($_SESSION);
 	$query = mysql_query("select * from db_comic limit 0,5", $db);	
 	if(!$query){
 		die(mysql_error());

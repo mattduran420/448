@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('functions.php');
 $myFile = $_FILES['photo']['name'];
 $tempFile = $_FILES['photo']['tmp_name'];
@@ -13,9 +14,9 @@ if($myFile)
 		$genre = $_POST['genre'];
 		$tag = $_POST['tag'];
 		$status = $_POST['status'];
-		$date = date.("Y-m-d");
-		//$user_id = $_SESSION['userID'];
-		$user_id = 1;
+		$date = date("Y-m-d");
+		$user_id = $_SESSION['userID'];
+		
 		//$new_file_name = strtolower($myFile);
 
 		
@@ -32,7 +33,7 @@ if($myFile)
 			//INSERT IMAGE AS BINARY BLOB INTO DATABASE
 
 			
-			$query = "INSERT INTO db_comic (comic_name, genre, tag, upload_date, image_payload, user_id, comic_status, rating_total, rating_count) VALUES('$comic_name','$genre','$tag','$date','$payload',$user_id,'$status',0,0)";
+			$query = "INSERT INTO db_comic (comic_name, genre, tag, upload_date, image_payload, user_id, comic_status, rating_total, rating_count) VALUES('$comic_name','$genre','$tag','$date','$payload',$user_id,$status,0,0)";
 			//echo $query;
 			
 			if(!mysql_query($query,$db)){

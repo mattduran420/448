@@ -1,16 +1,4 @@
 $(document).ready(function() {
-	
-	/*$('.rate_widget').each(function(i) {
-		var widget = this;
-		var out_data = {
-			widget_id : $(widget).attr('id'),
-			fetch : 1
-		};
-		$.post(
-			'comment_process.php'
-			)
-	})
-	*/
 
 	$("#star1").on('mouseover', function() {
 		$(this).attr('src', 'assets/img/yellow_star.png');
@@ -57,5 +45,25 @@ $(document).ready(function() {
 		}); 
 	});
 	
-
+	function countStar(){
+		var star = document.getElementById('#star-rating').value();
+		switch(star){
+			case "#star1":
+				star = 1;
+				break;
+			case "#star2":
+				star = 2;
+				break;
+			case "#star3":
+				star = 3;
+				break;
+			case "#star4":
+				star = 4;
+				break;
+			case "#star5":
+				star = 5;
+				break;
+			default 0;
+		}
+	}
 });
