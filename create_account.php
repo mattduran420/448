@@ -61,7 +61,7 @@
 	if($result && $result2){
 		$query2 = "select * from db_user where username='".$_POST['username']."'";
 		$result2 = mysql_query($query2);
-		if (mysql_num_rows($result2)==0){
+		if (mysql_num_rows($result2)==true){
 			$sql_insert = "INSERT INTO db_user(firstname, lastname, email, username, user_password) 
 							VALUES ('$firstname', '$lastname', '$email', '$username', '$user_password')";
 			mysql_query($sql_insert);
