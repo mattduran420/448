@@ -6,6 +6,16 @@ function checkRegistration() {
 
 	var pattern1 = /[0-9a-zA-Z]{6,}/;
 	var result = pattern1.test(upass);
+
+		var uname = document.getElementById("uname").value;
+
+	var pattern3 = /[0-9a-zA-Z_]{6,3}/;
+	var result3 = pattern3.test(uname);
+
+	var email = document.getElementById("email").value;
+
+	var pattern2 = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+	var result2 = pattern2.test(email);
 	
 	if (result==false) 
 	{
@@ -16,12 +26,7 @@ function checkRegistration() {
 		return false;
 	}
 	
-  var email = document.getElementById("email").value;
-
-	var pattern2 = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-	var result2 = pattern2.test(email);
-	
-	if (result2==false) 
+	else if (result2==false) 
 	{
 
 		alert("The email address you entered is not in the correct form.");
@@ -30,18 +35,15 @@ function checkRegistration() {
 		return false;
 	}
 	
-	var uname = document.getElementById("uname").value;
-
-	var pattern3 = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-	var result3 = pattern3.test(uname);
-	
-	if (result3==false) 
+	else if (result3==false) 
 	{
 
-		alert("This username is already taken. Please choose a different one.");
+		alert("This username you entered is not in the correct form. Must be at least 6 characters long.");
 	document.getElementById("uname").select();
     
 		return false;
+	}else{
+		return true;
 	}
 	}
 	
