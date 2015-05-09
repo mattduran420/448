@@ -5,7 +5,7 @@ include('header.php');
 <!-- Kat Pfeiffer -->
 
     <p>
-	<form name ="signup" id="signup" method="post" onsubmit="event.preventDefault(); return checkRegistration();">
+	<form name ="signup" id="signup" method="post" onsubmit="event.preventDefault(); return createAccount();">
 	
 	<label>
 	  First Name: <input type = "text" name = "firstname" size = "30" maxlength="30" 
@@ -42,7 +42,7 @@ include('header.php');
 	<br />
 	<br />
 	
-	<input type = "submit" value="Submit" onclick="createAccount()"/>
+	<input type = "submit" value="Submit" onclick="return checkRegistration()"/>
 	</form>
 	</p>
 
