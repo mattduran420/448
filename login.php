@@ -2,10 +2,8 @@
 include('header.php');
 ?>
 	<!-- Kat Pfeiffer -->
-	
-    <p>
-	<form name ="login" method="post" action = "auth.php">
-	
+	<form name ="login" method="post" action = "auth.php" id="loginform">
+	<p>
 	<label>
 	  Username: <input type = "text" name = "username" size ="30" maxlength="30" 
 	  			placeholder="example_name" onmouseover="displayMessage()" required/>
@@ -21,15 +19,13 @@ include('header.php');
 	<?php if(isset($_GET['error'])) { ?>
 	<p><span style="color:red;" onmouseover=
     "show_image('assets/img/crying.png', 
-                 530, 
-                 530, 
+                 50, 
+                 50, 
                  'You Are Wrong');">ERROR - incorrect login information</span></p>
 	<?php } ?>
 	
-	<input type = "submit" value="Login" />
+	<input type = "submit" value="Login" /></p>
 	</form>
-	</p>
-
 <?php
 include('footer.php');
 ?>

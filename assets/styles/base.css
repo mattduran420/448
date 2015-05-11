@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-/* @import url("comment_comic.css"); */
-
-=======
-/*@import url("comment_comic.css"); */
->>>>>>> origin/master
+@import url("comment_comic.css");
 html{
 	position: relative;
 	min-height:100%;
@@ -12,7 +7,7 @@ html{
 
 body{
 	background-color: #ddd;
-	margin: 0 0 150px;
+	/* margin: 0 0 150px; */
 }
 
 #header{

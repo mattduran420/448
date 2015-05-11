@@ -7,7 +7,7 @@ $er = mysql_select_db("mduran2");
 if(!$er) exit("Error - could not select db_user database");
 
 $querystring  = "SELECT comic_id,comic_name, genre, tag, upload_date FROM db_comic
-	 where user_id = 1 and comic_status = 1";
+	 where user_id = " . $_SESSION['userID'] . " and comic_status = 1 limit 0,5";
 $results = mysql_query($querystring, $db);
 if(!$results){
 	die("error:" . mysql_error());

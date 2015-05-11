@@ -52,6 +52,6 @@ function show_image(src, width, height, alt) {
     img.width = width;
     img.height = height;
     img.alt = alt;
-    
-    document.body.appendChild(img);
+    $("#loginform").append(img);
+    //document.body.appendChild(img);
 }

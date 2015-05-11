@@ -63,7 +63,7 @@ $(document).ready(function() {
 			case "#star5":
 				star = 5;
 				break;
-			default 0;
+			default: star = 0;
 		}
 	}
 });
