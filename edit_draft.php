@@ -50,7 +50,7 @@ $db = connectToDB();
 <br/>
 <!-- end example -->
 <!-- BEGIN LISTED NOTES -->
-<div class="something">
+<div class="something" style="background-color:#555;color:#fff;">
 <?php
 				$querystring  = "select db_note.*,db_user.username from db_note,db_user 
 		where db_note.user_id = db_user.user_id and comic_id = " . $_GET['id'] . " ORDER BY note_id DESC";
